@@ -1,38 +1,81 @@
-.App {
-  text-align: center;
+body {
+  background-color: black;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.phoneSize {
+  width: 400px;
+  height: 940px;
+
+  /* width and height auto responsive */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.navicons {
+  margin-left: 5px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.welcomeImage {
+  margin-top: 150px;
+}
+
+.agreeWelcomeImage {
+  margin-top: 250px;
+}
+
+.continueBtn {
+  background-color: #00d970;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.continueBtn:hover {
+  background-color: #00d970;
+  color: white;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.agreeContinueBtn {
+  margin-top: 50px;
+  background-color: #00d970;
+  color: white;
+}
+
+.agreeContinueBtn:hover {
+  background-color: #00d970;
+  color: white;
+}
+
+.countryCode {
+  width: 55px;
+}
+
+.phoneNumber::placeholder {
+  color: #636363;
+}
+
+.verificationFooter {
+  margin-top: 250px;
+}
+
+
+.confirmNumber {
+  position: absolute;
+  margin-top: 270px;
+  margin-left: 40px;
+  width: 300px;
+
+}
+
+.otpVerificationFooter {
+  margin-top: 350px;
+}
+
+.cursorPointer {
+  cursor: pointer;
+}
+
+.inputNumberSuccess {
+  position: absolute;
+  text-align: center;
+  width: 100px;
+  margin-left: 22px;
+  margin-top: -10px;
+  background-color: white;
 }
