@@ -16,7 +16,7 @@ const Agreepage = () => {
                 <img className="img-fluid mx-auto d-block rounded agreeWelcomeImage" alt="logo" src="https://neilpatel.com/wp-content/uploads/fly-images/117917/shutterstock_414630034-1200x675-c.png" />
                 <div className="text-center mt-5">
                     <h5 className="welcomeImage text-secondary"><b>Welcome to STUNXT</b></h5>
-                    <p className="mt-3">Read Our Privacy Policy. Tap "Agree & Continue" to accept the Terms of Service. </p>
+                    <p className="mt-3">Read Our <span style={{ color: "#00d970" }}>Privacy Policy</span>. Tap "Agree & Continue" to accept the <span style={{ color: "#00d970" }}>Terms of Service</span>. </p>
                 </div>
 
                 <div className="mt-5">

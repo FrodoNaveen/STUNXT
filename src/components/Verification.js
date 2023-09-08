@@ -49,6 +49,8 @@ const Verification = () => {
             splitNumber.pop()
             let joinNumber = splitNumber.join("")
             setPhoneNumber(joinNumber)
+        } else if (num.props.className === "fa-solid fa-check") {
+            getOtp()
         }
 
 
@@ -98,45 +100,50 @@ const Verification = () => {
                     <p className="text-center" style={{ color: "#636363" }}>Please confirm your country code and enter your phone number</p>
                 </div>
                 <div className="container mt-3">
-                    <div className="row">
-                        <div className="col-2">
-
-                            <span>
-                                <input className="form-control phoneNumber"
-                                    // placeholder="+91"
-                                    value="+91"
-                                    style={{
-                                        width: "52px",
-                                        height: "60px",
-                                        backgroundColor: checkPhoneNumber ? "#b3b3b3" : null,
-                                        borderColor: checkPhoneNumber ? "#00d970" : phoneNumber && phoneNumber.length === 10 ? "#00d970" : null
-                                    }} /></span>
-                        </div>
-
-                        <div className="col-10">
-                            <div>
-                                {phoneNumber && phoneNumber.length === 10 ?
-                                    <small className="inputNumberSuccess"
+                    <form>
+                        <div className="row">
+                            <div className="col-2">
+                                <span>
+                                    <input className="form-control phoneNumber"
+                                        // placeholder="+91"
+                                        value="+91"
                                         style={{
+                                            width: "52px",
+                                            height: "60px",
                                             backgroundColor: checkPhoneNumber ? "#b3b3b3" : null,
-                                            color: checkPhoneNumber ? "#636363" : null
-                                        }}>Phone number</small> : null}
-                                <input
-                                    className="form-control phoneNumber"
-                                    ref={inputRef} maxLength="10"
-                                    type="number"
-                                    placeholder="Phone number"
-                                    style={{
-                                        height: "60px",
-                                        backgroundColor: checkPhoneNumber ? "#b3b3b3" : null,
-                                        borderColor: checkPhoneNumber ? "#00d970" : phoneNumber && phoneNumber.length === 10 ? "#00d970" : null
-                                    }}
-                                    onChange={getPhoneNumber}
-                                    value={phoneNumber}
-                                    required />
+                                            borderColor: checkPhoneNumber ? "#00d970" : phoneNumber && phoneNumber.length === 10 ? "#00d970" : null
+                                        }} /></span>
+                            </div>
+
+                            <div className="col-10">
+                                <div>
+                                    {phoneNumber && phoneNumber.length === 10 ?
+                                        <small className="inputNumberSuccess"
+                                            style={{
+                                                backgroundColor: checkPhoneNumber ? "#b3b3b3" : null,
+                                                color: checkPhoneNumber ? "#636363" : null
+                                            }}>Phone number</small> : null}
+                                    <input
+
+                                        className="form-control phoneNumber"
+                                        ref={inputRef}
+                                        maxlength="10"
+                                        type="number"
+                                        placeholder="Phone number"
+                                        style={{
+                                            height: "60px",
+                                            backgroundColor: checkPhoneNumber ? "#b3b3b3" : null,
+                                            borderColor: checkPhoneNumber ? "#00d970" : phoneNumber && phoneNumber.length === 10 ? "#00d970" : null
+                                        }}
+                                        name="number"
+                                        onChange={getPhoneNumber}
+                                        value={phoneNumber}
+                                        required
+                                        autoComplete="off" />
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </form>
                     <div className="mt-3">
                         <small className="text-muted text-start">We'll send you an otp by sms to cofirm your mobile number</small>
                     </div>
@@ -157,7 +164,7 @@ const Verification = () => {
                 </div>
                 <div className="container dialpad mt-3 mb-3">
                     {dialPad.map((ele, index) => (
-                        <button key={index} className="btn rounded-5 border-0 mt-3" style={{ backgroundColor: checkPhoneNumber ? "#837f7f" : "#F9F9F9", color: "black", width: "106px", height: "50px" }} onClick={() => dialPadToInput(ele)}>{ele}</button>
+                        <button key={index} className="btn rounded-5 border-0 mt-3" style={{ backgroundColor: checkPhoneNumber ? "#8f8d8dfd" : "#F9F9F9", color: "black", width: "106px", height: "50px" }} onClick={() => dialPadToInput(ele)}>{ele}</button>
                     ))}
                 </div>
             </div>

@@ -9,6 +9,7 @@ import Verification from "./components/Verification.js";
 import Otppage from "./components/Otppage";
 import Personaldetailspage1 from "./components/Personaldetailspage1";
 import Personaldetailspage2 from "./components/Personaldetailspage2";
+import Loginas from "./components/Loginas";
 
 function App() {
   return (
@@ -23,8 +24,9 @@ function App() {
         <Route path="/agree" element={<Agreepage />}></Route>
         <Route path="/verification" element={<Verification />}></Route>
         <Route path="/otp" element={<Otppage />}></Route>
-        <Route path="personaldetailspage" element={<Personaldetailspage1 />}></Route>
-        <Route path="personaldetailspage2" element={<Personaldetailspage2 />}></Route>
+        <Route path="/personaldetailspage" element={<Personaldetailspage1 />}></Route>
+        <Route path="/personaldetailspage2" element={<Personaldetailspage2 />}></Route>
+        <Route path="/loginaspage" element={<Loginas />}></Route>
       </Routes>
     </div>
   );

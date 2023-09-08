@@ -26,6 +26,11 @@ const Otppage = () => {
     }, [resendOtp])
 
 
+    function goToPersonalDetailsPage1() {
+        navigate("/personaldetailspage")
+    }
+
+
     function dialPadToInput(num) {
         if (typeof (num) === "number") {
             let data = otp
@@ -37,14 +42,14 @@ const Otppage = () => {
             splitNumber.pop()
             let joinNumber = splitNumber.join("")
             setOtp(joinNumber)
+        } else if (num.props.className === "fa-solid fa-check") {
+            goToPersonalDetailsPage1()
         }
 
 
     }
 
-    function goToPersonalDetailsPage1() {
-        navigate("/personaldetailspage")
-    }
+
 
     return (
         <div className="container card mt-5 phoneSize">

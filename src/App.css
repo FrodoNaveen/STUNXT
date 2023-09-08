@@ -3,8 +3,8 @@ body {
 }
 
 .phoneSize {
-  width: auto;
-  height: auto;
+  width: 400px;
+  height: 940px;
 
   /* width and height auto responsive */
 }
@@ -114,4 +114,26 @@ body {
 
 .formPageFooter {
   margin-top: 135px;
+}
+
+.loginasCard {
+  height: 80px;
+  border: none;
+
+}
+
+.loginasCard:hover {
+  background-color: #00d970;
+}
+
+.loginasImage {
+  height: 40px;
+  width: 40px;
+  margin-left: 10px;
+}
+
+.loginasName {
+  color: #4d4d4d;
+  font-size: 20px;
+  margin-left: 30px;
 }
