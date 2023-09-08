@@ -2,8 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import logo from "../images/logo txt.png";
 import logoloader from "../images/s logo.png";
-import "./Loader.css"
-
+import "./Loader.css";
 
 const LogoLoader = () => {
   const navigate = useNavigate();
@@ -47,16 +46,19 @@ const LogoLoader = () => {
             <i className="fa-solid fa-wifi" style={{ color: "#000000" }}></i>
           </span>
           <span className="navicons">
-            <i className="fa-solid fa-battery-full" style={{ color: "#000000" }}></i>
+            <i
+              className="fa-solid fa-battery-full"
+              style={{ color: "#000000" }}
+            ></i>
           </span>
         </div>
       </div>
       <div className="logo-container">
-      <img  src={logo} className="logo" alt="logo" />
+        <img src={logo} className="logo" alt="logo" />
       </div>
-        
-        <div className="loader-container"> 
-        <img  src={logoloader} className="loader-logo" alt="logo" />
+
+      <div className="loader-container">
+        <img src={logoloader} className="loader-logo" alt="logo" />
       </div>
     </div>
   );

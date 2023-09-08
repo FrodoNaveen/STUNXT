@@ -1,5 +1,5 @@
-import { Routes, Route } from "react-router-dom"
-import './App.css';
+import { Routes, Route } from "react-router-dom";
+import "./App.css";
 import LogoLoader from "./components/LogoLoader";
 import Welcome from "./components/Welcome";
 import Welcomee2 from "./components/Welcomee2";
@@ -23,8 +23,14 @@ function App() {
         <Route path="/agree" element={<Agreepage />}></Route>
         <Route path="/verification" element={<Verification />}></Route>
         <Route path="/otp" element={<Otppage />}></Route>
-        <Route path="personaldetailspage" element={<Personaldetailspage1 />}></Route>
-        <Route path="personaldetailspage2" element={<Personaldetailspage2 />}></Route>
+        <Route
+          path="personaldetailspage"
+          element={<Personaldetailspage1 />}
+        ></Route>
+        <Route
+          path="personaldetailspage2"
+          element={<Personaldetailspage2 />}
+        ></Route>
       </Routes>
     </div>
   );
