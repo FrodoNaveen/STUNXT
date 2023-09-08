@@ -9,16 +9,24 @@ body {
   /* width and height auto responsive */
 }
 
+.welcomeBody {
+  height: 940px;
+}
+
 .navicons {
   margin-left: 5px;
 }
 
-.welcomeImage {
+.welcomeImage1 {
   margin-top: 150px;
 }
 
+.welcomeImage {
+  margin-top: 78px;
+}
+
 .agreeWelcomeImage {
-  margin-top: 250px;
+  margin-top: 130px;
 }
 
 .continueBtn {
@@ -64,7 +72,7 @@ body {
 }
 
 .otpVerificationFooter {
-  margin-top: 315px;
+  margin-top: 255px;
 }
 
 .cursorPointer {

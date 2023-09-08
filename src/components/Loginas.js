@@ -4,8 +4,11 @@ import stafflogo from "../images/Absence.png"
 import companylogo from "../images/Office building.png"
 import collabaratorlogo from "../images/Handshake.png"
 import otherslogo from "../images/User.png"
+import { useNavigate } from "react-router-dom"
 
 const Loginas = () => {
+
+    const navigate = useNavigate()
 
     let Loginas =
         [{ image: studentlogo, name: "College Student" },
@@ -14,6 +17,10 @@ const Loginas = () => {
         { image: collabaratorlogo, name: "Collabarator" },
         { image: otherslogo, name: "Others" }]
 
+    function goToPreviousPage() {
+        navigate("/personaldetailspage")
+    }
+
 
     return (
         <div className="container card mt-5 phoneSize">
@@ -21,7 +28,7 @@ const Loginas = () => {
             <div className="mt-5">
                 <div className="row">
                     <div className="col-1">
-                        <p className="cursorPointer"><i className="fa-solid fa-arrow-left" style={{ color: "#000000" }}></i></p>
+                        <p className="cursorPointer" onClick={goToPreviousPage}><i className="fa-solid fa-arrow-left" style={{ color: "#000000" }}></i></p>
                     </div>
                     <div className="col-11 text-center">
                         <b style={{ color: "#4d4d4d" }}>Login as</b>
