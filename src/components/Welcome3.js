@@ -41,8 +41,8 @@ const Welcome3 = () => {
                 <span className="float-start"><b>{time}</b></span>
                 <div className="float-end d-flex justify-content-around">
                     <span><i class="fa-solid fa-signal" style={{ color: "#000000" }}></i></span>
-                    <span className="navicons"><i class="fa-solid fa-wifi" style={{ color: "#000000" }}></i></span>
-                    <span className="navicons"><i class="fa-solid fa-battery-full" style={{ color: "#000000" }}></i></span>
+                    <span className="navicons"><i className="fa-solid fa-wifi" style={{ color: "#000000" }}></i></span>
+                    <span className="navicons"><i className="fa-solid fa-battery-full" style={{ color: "#000000" }}></i></span>
                 </div>
             </div>
             <div className="container bg-body-tertiary">

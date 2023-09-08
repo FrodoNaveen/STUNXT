@@ -7,6 +7,7 @@ const Welcome = () => {
 
     const [time, setTime] = useState()
 
+    
     function goToNextPage() {
         navigate("/welcome2")
     }
