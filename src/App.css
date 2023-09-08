@@ -3,8 +3,8 @@ body {
 }
 
 .phoneSize {
-  width: 400px;
-  height: 940px;
+  width: auto;
+  height: auto;
 
   /* width and height auto responsive */
 }

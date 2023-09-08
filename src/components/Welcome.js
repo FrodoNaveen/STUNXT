@@ -7,6 +7,7 @@ const Welcome = () => {
 
 
 
+    
     function goToNextPage() {
         navigate("/welcome2")
     }
