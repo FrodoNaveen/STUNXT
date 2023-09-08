@@ -1,32 +1,23 @@
-import React, { useState, useEffect, useRef } from "react"
+import { useState, useRef, useEffect } from "react"
 import { useNavigate } from "react-router-dom"
+import Time from "./Time"
 
 
 const Verification = () => {
 
     const navigate = useNavigate()
 
-    const [time, setTime] = useState()
-    const [phoneNumber, setPhoneNumber] = useState()
+    const [phoneNumber, setPhoneNumber] = useState("")
     const [checkPhoneNumber, setCheckPhoneNumber] = useState(false)
     const inputRef = useRef()
+
+    const dialPad = [1, 2, 3, 4, 5, 6, 7, 8, 9, <i className="fa-solid fa-delete-left" style={{ color: "#000000;" }}></i>, 0, <i className="fa-solid fa-check" style={{ color: "#010204" }}></i>]
+
+
 
 
     useEffect(() => {
         setCheckPhoneNumber(false)
-
-        let date = new Date()
-        let hours = date.getHours()
-
-        let minutes = date.getMinutes()
-        if (minutes < 10 && hours <= 12) {
-            setTime(`${hours}:0${minutes}`)
-        } else if (minutes < 10 && hours > 12) {
-            setTime(`${hours - 12}:0${minutes}`)
-        } else {
-            setTime(`${hours}:${minutes}`)
-        }
-
     }, [])
 
     function getPhoneNumber(e) {
@@ -47,17 +38,26 @@ const Verification = () => {
         navigate("/otp")
     }
 
+    function dialPadToInput(num) {
+        if (typeof (num) === "number") {
+            let data = phoneNumber
+            let newData = data.concat(num)
+            setPhoneNumber(newData)
+        } else if (num.props.className === "fa-solid fa-delete-left") {
+
+            let splitNumber = phoneNumber.split("")
+            splitNumber.pop()
+            let joinNumber = splitNumber.join("")
+            setPhoneNumber(joinNumber)
+        }
+
+
+    }
+
 
     return (
         <div className="container card mt-5 phoneSize">
-            <div className="container bg-white m-2">
-                <span className="float-start"><b>{time}</b></span>
-                <div className="float-end d-flex justify-content-around">
-                    <span><i className="fa-solid fa-signal" style={{ color: "#000000" }}></i></span>
-                    <span className="navicons"><i class="fa-solid fa-wifi" style={{ color: "#000000" }}></i></span>
-                    <span className="navicons"><i class="fa-solid fa-battery-full" style={{ color: "#000000" }}></i></span>
-                </div>
-            </div>
+            <Time />
             {phoneNumber && phoneNumber.length === 10 && checkPhoneNumber ?
                 <div className="row">
                     <div className="col-12">
@@ -103,7 +103,8 @@ const Verification = () => {
 
                             <span>
                                 <input className="form-control phoneNumber"
-                                    placeholder="+91"
+                                    // placeholder="+91"
+                                    value="+91"
                                     style={{
                                         width: "52px",
                                         height: "60px",
@@ -146,16 +147,21 @@ const Verification = () => {
                         </div>
                         {phoneNumber && phoneNumber.length === 10 ?
                             <div className="float-end">
-                                <span className="arrowCircle" style={{ color: "#00d970" }} onClick={getOtp}><i class="fa-solid fa-circle-arrow-right fa-2xl"></i></span>
+                                <span className="cursorPointer" style={{ color: "#00d970" }} onClick={getOtp}><i className="fa-solid fa-circle-arrow-right fa-2xl"></i></span>
                             </div> :
                             <div className="float-end">
-                                <span className="text-secondary"><i class="fa-solid fa-circle-arrow-right fa-2xl"></i></span>
+                                <span className="text-secondary"><i className="fa-solid fa-circle-arrow-right fa-2xl"></i></span>
                             </div>}
 
                     </div>
                 </div>
-
+                <div className="container dialpad mt-3 mb-3">
+                    {dialPad.map((ele, index) => (
+                        <button key={index} className="btn rounded-5 border-0 mt-3" style={{ backgroundColor: checkPhoneNumber ? "#837f7f" : "#F9F9F9", color: "black", width: "106px", height: "50px" }} onClick={() => dialPadToInput(ele)}>{ele}</button>
+                    ))}
+                </div>
             </div>
+
 
         </div >
     )
