@@ -55,8 +55,11 @@ const Verification = () => {
       splitNumber.pop();
       let joinNumber = splitNumber.join("");
       setPhoneNumber(joinNumber);
+    } else if (num.props.className === "fa-solid fa-check") {
+      goToOtpPage()
     }
   }
+
 
   return (
     <div className="container card mt-5 phoneSize">
