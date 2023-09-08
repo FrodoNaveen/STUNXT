@@ -45,6 +45,14 @@ const Otppage = () => {
         }
     }, [resendOtp]);
 
+    function goToPersonalDetailsPage() {
+        if (validateOTP(otp, generatedOTP)) {
+            navigate("/personaldetailspage");
+        } else {
+            alert("Incorrect OTP. Please try again.");
+        }
+    }
+
     function dialPadToInput(num) {
         if (typeof num === "number") {
             let data = otp;
@@ -55,16 +63,12 @@ const Otppage = () => {
             splitNumber.pop();
             let joinNumber = splitNumber.join("");
             setOtp(joinNumber);
+        } else if (num.props.className === "fa-solid fa-check") {
+            goToPersonalDetailsPage()
         }
     }
 
-    function goToPersonalDetailsPage() {
-        if (validateOTP(otp, generatedOTP)) {
-            navigate("/personaldetailspage");
-        } else {
-            alert("Incorrect OTP. Please try again.");
-        }
-    }
+
 
     return (
         <div className="container card mt-5 phoneSize">
