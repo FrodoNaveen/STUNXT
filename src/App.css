@@ -57,14 +57,14 @@ body {
 
 .confirmNumber {
   position: absolute;
-  margin-top: 270px;
+  margin-top: 290px;
   margin-left: 40px;
   width: 300px;
 
 }
 
 .otpVerificationFooter {
-  margin-top: 350px;
+  margin-top: 315px;
 }
 
 .cursorPointer {
@@ -78,4 +78,40 @@ body {
   margin-left: 22px;
   margin-top: -10px;
   background-color: white;
+}
+
+.dialpad {
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+
+.formDetails {
+  margin-top: 40px;
+}
+
+.formInputHeight {
+  height: 62px;
+  border-color: #d2cfcf;
+}
+
+.formInputRadio {
+  margin-left: 40px;
+  margin-top: 22px;
+
+}
+
+.detailsPage1Filling {
+  background: linear-gradient(to right, #00d970 50%, #d2cfcf 50%);
+  height: 10px;
+  width: 90px;
+}
+
+.detailsPage2Filling {
+  background-color: #00d970;
+  height: 10px;
+  width: 90px;
+}
+
+.formPageFooter {
+  margin-top: 135px;
 }
