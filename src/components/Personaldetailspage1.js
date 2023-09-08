@@ -30,7 +30,7 @@ const Personaldetailspage1 = () => {
                     <div className="col-1">
                         <p className="cursorPointer" onClick={goToSecondDetailsPage ? goToPreviousFormPage : goToOtpPage}><i className="fa-solid fa-arrow-left" style={{ color: "#000000" }}></i></p>
                     </div>
-                    <div className="col-11 mt-2 text-center">
+                    <div className="col-11 text-center">
                         <b style={{ color: "#4d4d4d" }}>Personal details</b>
                         <p className="mt-3" style={{ color: "#636363" }}>Please fill your personal details</p>
                         <div className="mt-4">

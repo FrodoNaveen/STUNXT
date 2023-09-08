@@ -15,15 +15,15 @@ const Welcomee2 = () => {
   return (
     <div className="container card mt-5 phoneSize">
       <Time />
-      <div className="container bg-body-tertiary">
-        <p className="btn mt-5" onClick={goToPreviousPage}>
+      <div className="container bg-body-tertiary welcomeBody">
+        <p className="cursorPointer mt-5" onClick={goToPreviousPage}>
           <i
             className="fa-solid fa-arrow-left"
             style={{ color: "#000000" }}
           ></i>
         </p>
         <img
-          className="img-fluid mx-auto d-block rounded welcomeImage"
+          className="img-fluid mx-auto d-block welcomeImage"
           alt="logo"
           src={girlchat}
         />
