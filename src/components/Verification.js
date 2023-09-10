@@ -55,8 +55,11 @@ const Verification = () => {
       splitNumber.pop();
       let joinNumber = splitNumber.join("");
       setPhoneNumber(joinNumber);
+    } else if (num.props.className === "fa-solid fa-check") {
+      goToOtpPage()
     }
   }
+
 
   return (
     <div className="container card mt-5 phoneSize">
@@ -131,8 +134,8 @@ const Verification = () => {
                     borderColor: checkPhoneNumber
                       ? "#00d970"
                       : phoneNumber && phoneNumber.length === 10
-                      ? "#00d970"
-                      : null,
+                        ? "#00d970"
+                        : null,
                   }}
                   readOnly // Use readOnly instead of placeholder for static text
                 />
@@ -163,8 +166,8 @@ const Verification = () => {
                     borderColor: checkPhoneNumber
                       ? "#00d970"
                       : phoneNumber && phoneNumber.length === 10
-                      ? "#00d970"
-                      : null,
+                        ? "#00d970"
+                        : null,
                   }}
                   onChange={getPhoneNumber}
                   value={phoneNumber}

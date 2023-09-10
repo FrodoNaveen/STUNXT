@@ -12,9 +12,9 @@ const Agreepage = () => {
   return (
     <div className="container card mt-5 phoneSize">
       <Time />
-      <div className="container bg-body-tertiary">
+      <div className="container bg-body-tertiary welcomeBody">
         <img
-          className="img-fluid mx-auto d-block rounded agreeWelcomeImage"
+          className="img-fluid mx-auto d-block agreeWelcomeImage"
           alt="logo"
           src={girlchat}
         />
