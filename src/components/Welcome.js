@@ -8,7 +8,7 @@ const Welcome = () => {
   function goToNextPage() {
     navigate("/welcome2");
   }
-
+ 
   return (
     <div className="container card mt-5 phoneSize">
       <Time />

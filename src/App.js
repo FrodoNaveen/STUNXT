@@ -10,6 +10,10 @@ import Otppage from "./components/Otppage";
 import Personaldetailspage1 from "./components/Personaldetailspage1";
 import Personaldetailspage2 from "./components/Personaldetailspage2";
 import Loginas from "./components/Loginas";
+import CollegeStudent from "./components/CollegeStudent";
+import CollegeStaff from "./components/CollegeStaff";
+import CollegeStaff2 from "./components/StaffPage2";
+import CompanyDetails from "./components/CompanyDetails";
 
 function App() {
   return (
@@ -33,6 +37,10 @@ function App() {
           element={<Personaldetailspage2 />}
         ></Route>
         <Route path="/loginaspage" element={<Loginas />}></Route>
+        <Route path="/student" element={<CollegeStudent />}></Route>
+        <Route path="/staff" element={<CollegeStaff />}></Route>
+        <Route path="/staff2" element={<CollegeStaff2 />}></Route>
+        <Route path="/companylogin" element={<CompanyDetails />}></Route>
       </Routes>
     </div>
   );
