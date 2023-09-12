@@ -20,19 +20,20 @@ const Navbar = () => {
     { image: <FaUserFriends size="20px" />, name: "Network" },
     { image: <PiSuitcaseSimpleLight size="20px" />, name: "Career" }]
     return (
-        <div className=" container card mt-5 phoneSize">
-            <div className="navbar">
-                <div className="container mt-2">
-                    {navBarFooter.map((ele, index) => (
-                        <div className=" cursorPointer text-center" key={index} onClick={() => goToNav(index)}>
-                            {nav === index ? <span style={{ color: "#00d970" }}><b>{ele.image}</b></span> :
-                                <span onClick={() => goToNav(index)}>{ele.image}</span>}
-                            <p>{ele.name}</p>
-                        </div>
-                    ))}
-                </div>
-            </div>
-        </div >
+
+        <ul className="nav justify-content-between navBar" >
+            {navBarFooter.map((ele, index) => (
+                <li className="nav-item text-center" key={index} onClick={() => goToNav(index)}>
+                    {nav === index ?
+                        <a className="nav-link" style={{ color: "#00d970" }} aria-current="page" href="#">{ele.image}</a>
+                        :
+                        <a className="nav-link text-black" aria-current="page" href="#"><b>{ele.image}</b></a>
+                    }
+                    <span>{ele.name}</span>
+                </li>
+            ))}
+        </ul>
+
     )
 }
 export default Navbar
