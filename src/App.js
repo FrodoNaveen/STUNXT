@@ -14,6 +14,7 @@ import CollegeStudent from "./components/CollegeStudent";
 import CollegeStaff from "./components/CollegeStaff";
 import CollegeStaff2 from "./components/StaffPage2";
 import CompanyDetails from "./components/CompanyDetails";
+import Navbar from "./components/Navbar";
 
 function App() {
   return (
@@ -41,6 +42,7 @@ function App() {
         <Route path="/staff" element={<CollegeStaff />}></Route>
         <Route path="/staff2" element={<CollegeStaff2 />}></Route>
         <Route path="/companylogin" element={<CompanyDetails />}></Route>
+        <Route path="/navbarfooter" element={<Navbar />}></Route>
       </Routes>
     </div>
   );

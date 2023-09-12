@@ -31,7 +31,7 @@ const CollegeStaff = () => {
   return (
     <div
       className="container card mt-5 phoneSize"
-      style={{ minHeight: "100vh", display: "flex", flexDirection: "column" }}
+      style={{ display: "flex", flexDirection: "column" }}
     >
       <Time />
 

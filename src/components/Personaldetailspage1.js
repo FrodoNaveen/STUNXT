@@ -78,7 +78,7 @@ const Personaldetailspage1 = () => {
                             </div>
                             <div className="row mt-4">
                                 <div className="col-12">
-                                    <input className="form-control formInputHeight" placeholder="Date of Birth" />
+                                    <input className="form-control formInputHeight" placeholder="Date of Birth" type="date" />
                                 </div>
                             </div>
                         </form>

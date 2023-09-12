@@ -15,7 +15,7 @@ const CollegeStaff2 = () => {
   }
 
   // Generate an array of years (e.g., from 2022 to 2030)
-  const years = Array.from({ length: 20 }, (_, index) => 1990 + index);
+  // const years = Array.from({ length: 20 }, (_, index) => 1990 + index);
 
   // Function to handle radio button click
   const handleRadioChange = (e) => {
@@ -25,7 +25,7 @@ const CollegeStaff2 = () => {
   return (
     <div
       className="container card mt-5 phoneSize"
-      style={{ minHeight: "100vh", display: "flex", flexDirection: "column" }}
+      style={{ display: "flex", flexDirection: "column" }}
     >
       <Time />
 
