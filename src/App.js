@@ -15,7 +15,7 @@ import CollegeStaff from "./components/CollegeStaff";
 import CollegeStaff2 from "./components/StaffPage2";
 import CompanyDetails from "./components/CompanyDetails";
 import Home from "./components/Home";
-import Navbar from "./components/Navbar";
+
 
 function App() {
   return (
@@ -44,7 +44,6 @@ function App() {
         <Route path="/staff2" element={<CollegeStaff2 />}></Route>
         <Route path="/companylogin" element={<CompanyDetails />}></Route>
         <Route path="/home" element={<Home />}></Route>
-        <Route path="/navbar" element={<Navbar />}></Route>
       </Routes>
     </div>
   );

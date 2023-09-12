@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useRef } from "react"
 import { useNavigate } from "react-router-dom"
 import Personaldetailspage2 from "./Personaldetailspage2"
 import Time from "./Time"
@@ -9,6 +9,7 @@ const Personaldetailspage1 = () => {
     const navigate = useNavigate()
 
     const [goToSecondDetailsPage, setGoToSecondDetailsPage] = useState(false)
+    const bday = useRef()
 
 
     function goToNextFormPage() {
@@ -22,8 +23,17 @@ const Personaldetailspage1 = () => {
     function goToPreviousFormPage() {
         setGoToSecondDetailsPage(false)
     }
+
+    function typeDateChange() {
+        bday.current.type = "date"
+    }
+
+    function typeTextChange() {
+        bday.current.type = "text"
+    }
+
     return (
-        <div className="container card mt-5 phoneSize">
+        <div className="mainContainer card mt-5 phoneSize">
             <Time />
             <div className="mt-5">
                 <div className="row">
@@ -78,7 +88,7 @@ const Personaldetailspage1 = () => {
                             </div>
                             <div className="row mt-4">
                                 <div className="col-12">
-                                    <input className="form-control formInputHeight" placeholder="Date of Birth" type="date" />
+                                    <input ref={bday} className="form-control formInputHeight" placeholder="Date of Birth" onFocus={typeDateChange} onBlur={typeTextChange} />
                                 </div>
                             </div>
                         </form>
@@ -92,3 +102,4 @@ const Personaldetailspage1 = () => {
     )
 }
 export default Personaldetailspage1
+

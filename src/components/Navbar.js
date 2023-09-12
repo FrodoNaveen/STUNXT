@@ -14,7 +14,7 @@ const Navbar = () => {
         setNav(index)
     }
 
-    const navBarFooter = [{ image: <GoHome size="20px" />, name: "Home" },
+    const navBarFooter = [{ image: <GoHome size="20px" style={{ color: "#00d970" }} />, name: "Home" },
     { image: <MdOutlineFeed size="20px" />, name: "Feeds" },
     { image: <GiPartyPopper size="20px" />, name: "Events" },
     { image: <FaUserFriends size="20px" />, name: "Network" },

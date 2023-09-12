@@ -7,7 +7,7 @@ import greenicon from "../images/Menubar/green icon.png";
 
 const MenuBar = () => {
   return (
-    <nav className="navbar bg-white navbar-white ">
+    <nav className="navbar bg-white navbar-white pt-3">
       <div className="container-fluid ">
         <div className="d-flex justify-content-start align-items-center position-relative">
           <div style={{ marginRight: "10px" }}></div>
