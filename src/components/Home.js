@@ -1,17 +1,20 @@
 import Time from "./Time";
 import MenuBar from "./MenuBar";
+import Navbar from "./Navbar";
 
 
 const Home = () => {
 
 
-return (
+  return (
+
     <div className="container card mt-5 phoneSize">
       <Time />
-      <MenuBar/>
-      </div>
-);
+      <MenuBar />
+      <Navbar />
+    </div >
+  );
 
 
-}; 
+};
 export default Home;

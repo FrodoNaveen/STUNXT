@@ -26,6 +26,7 @@ const Otppage = () => {
         // ... your dialPad configuration
     ];
 
+
     const [resendOtp, setResendOtp] = useState(15);
     const [otp, setOtp] = useState("");
     const [generatedOTP, setGeneratedOTP] = useState("");
