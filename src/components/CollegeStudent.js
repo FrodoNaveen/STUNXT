@@ -18,7 +18,7 @@ const CollegeStudent = () => {
   const years = Array.from({ length: 12 }, (_, index) => 2010 + index);
 
   function goToHomePage() {
-    navigate("/navbarfooter")
+    navigate("/home")
   }
 
   return (

@@ -32,9 +32,9 @@ const Loginas = () => {
   }
 
   return (
-    <div className="container card mt-5 phoneSize">
+    <div className="mainContainer card mt-5 phoneSize">
       <Time />
-      <div className="mt-5">
+      <div className="container mt-5">
         <div className="row">
           <div className="col-1">
             <p className="cursorPointer" onClick={goToPreviousPage}>

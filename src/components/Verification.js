@@ -62,7 +62,7 @@ const Verification = () => {
 
 
   return (
-    <div className="container card mt-5 phoneSize">
+    <div className="mainContainer card mt-5 phoneSize">
       <Time />
       {phoneNumber && phoneNumber.length === 10 && checkPhoneNumber ? (
         <div className="row">

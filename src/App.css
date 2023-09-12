@@ -9,6 +9,10 @@ body {
   /* width and height auto responsive */
 }
 
+.mainContainer {
+  margin: auto;
+}
+
 .welcomeBody {
   height: 940px;
 }

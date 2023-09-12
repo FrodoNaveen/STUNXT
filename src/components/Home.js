@@ -8,7 +8,7 @@ const Home = () => {
 
   return (
 
-    <div className="container card mt-5 phoneSize">
+    <div className="bg-body-secondary card mt-5 phoneSize">
       <Time />
       <MenuBar />
       <Navbar />

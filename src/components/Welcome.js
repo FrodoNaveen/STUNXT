@@ -8,9 +8,9 @@ const Welcome = () => {
   function goToNextPage() {
     navigate("/welcome2");
   }
- 
+
   return (
-    <div className="container card mt-5 phoneSize">
+    <div className="mainContainer card mt-5 phoneSize">
       <Time />
       <div className="container bg-body-tertiary welcomeBody">
         <img
