@@ -35,7 +35,7 @@ const Personaldetailspage1 = () => {
     return (
         <div className="mainContainer card mt-5 phoneSize">
             <Time />
-            <div className="mt-5">
+            <div className="container mt-5">
                 <div className="row">
                     <div className="col-1">
                         <p className="cursorPointer" onClick={goToSecondDetailsPage ? goToPreviousFormPage : goToOtpPage}><i className="fa-solid fa-arrow-left" style={{ color: "#000000" }}></i></p>

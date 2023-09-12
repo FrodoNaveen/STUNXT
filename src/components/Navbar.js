@@ -21,7 +21,7 @@ const Navbar = () => {
     { image: <PiSuitcaseSimpleLight size="20px" />, name: "Career" }]
     return (
 
-        <ul className="nav justify-content-between navBar" >
+        <ul className="nav bg-white justify-content-between navBar" >
             {navBarFooter.map((ele, index) => (
                 <li className="nav-item text-center" key={index} onClick={() => goToNav(index)}>
                     {nav === index ?
