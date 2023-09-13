@@ -18,7 +18,7 @@ const Home = () => {
     <div className="mainContainer bg-body-secondary card mt-5 phoneSize">
       <Time />
       <MenuBar />
-      <div className="container" style={{ overflow: "scroll" }}>
+      <div className="container scrollHide" style={{ overflow: "scroll" }}>
 
         {/* verify alert block */}
         <div className="card bg-white mt-3 borderWhite">
