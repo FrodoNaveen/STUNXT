@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import { GiPartyPopper } from "react-icons/gi";
 import { MdOutlineFeed } from "react-icons/md"
 import { GoHome } from "react-icons/go"
@@ -13,6 +13,7 @@ const Navbar = () => {
     function goToAnotherNav(index) {
         setNav(index)
     }
+
 
     const navBarFooter = [{ image: <GoHome size="20px" />, name: "Home" },
     { image: <MdOutlineFeed size="20px" />, name: "Feeds" },
