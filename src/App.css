@@ -192,3 +192,7 @@ body {
   background-color: #00D9701A;
   cursor: pointer;
 }
+
+.scrollHide::-webkit-scrollbar {
+  display: none;
+}
