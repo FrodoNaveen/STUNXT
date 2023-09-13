@@ -28,7 +28,6 @@ const CompanyDetails = () => {
   return (
     <div
       className="container card mt-5 phoneSize"
-      style={{ minHeight: "100vh", display: "flex", flexDirection: "column" }}
     >
       <Time />
 
@@ -119,7 +118,7 @@ const CompanyDetails = () => {
         </div>
       </div>
       <div className="mt-5 flex-grow-1"></div>
-      <div className="mt-5 mb-5" style={{ marginTop: "auto" }}>
+      <div className="mt-5 mb-5" >
         <div className="float-center ">
           <div className="">
             <button className="btn w-100 rounded-5 continueBtn" onClick={goTo}>
