@@ -10,6 +10,8 @@ import eventsData from "./EventsData";
 
 const Home = () => {
 
+  const index = 0
+
 
   return (
 
@@ -73,7 +75,7 @@ const Home = () => {
                 {birthdays.map((ele) => (
                   <div className="row mb-3">
                     <div className="col-3">
-                      <img style={{ borderRadius: "40px" }} src={ele.profile} />
+                      <img style={{ borderRadius: "40px" }} src={ele.profile} alt="personprofile" />
                     </div>
                     <div className="col-5 ps-0 mt-1">
                       <b>{ele.name}</b>
@@ -90,7 +92,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <Navbar />
+      <Navbar index={index} />
     </div >
 
   );

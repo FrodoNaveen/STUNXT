@@ -3,12 +3,14 @@ import MenuBar from "./MenuBar";
 import Navbar from "./Navbar";
 
 const Events = () => {
+
+  const index = 2
   return (
     <div className="mainContainer bg-body-secondary card mt-5 phoneSize">
       <Time />
       <MenuBar />
-
-      <Navbar />
+      <h1>Events</h1>
+      <Navbar index={index} />
     </div>
   );
 };
