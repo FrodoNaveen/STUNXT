@@ -124,7 +124,7 @@ const CollegeStaff = () => {
         </div>
       </div>
       <div className="mt-5 flex-grow-1"></div>
-      <div className="mt-5 mb-5 style={{ marginTop: 'auto' }}">
+      <div className="mt-10 mb-5 style={{ marginTop: 'auto' }}">
         <div className="float-start ">
           <button className="btn" style={{ color: "#00d970" }}>
             <b>Skip</b>
