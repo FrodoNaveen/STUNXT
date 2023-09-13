@@ -9,6 +9,10 @@ body {
   /* width and height auto responsive */
 }
 
+.mainContainer {
+  margin: auto;
+}
+
 .welcomeBody {
   height: 940px;
 }
@@ -144,4 +148,47 @@ body {
   color: #4d4d4d;
   font-size: 20px;
   margin-left: 30px;
+}
+
+/* .navBar {
+  margin-top: 860px;
+  width: auto;
+  position: fixed;
+  border: 1px solid red
+} */
+
+.navBar {
+  border-top: 1px solid #d2cfcf;
+  position: absolute;
+  bottom: 0;
+  width: 398px;
+  border-radius: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+}
+
+.mainBody {
+  overflow: scroll;
+}
+
+.b_100 {
+  margin-bottom: 100px;
+}
+
+.borderWhite {
+  border-color: white;
+}
+
+.appGreen {
+  color: #00d970;
+}
+
+.wishNowBtn {
+  width: 88px;
+  height: 30px;
+  border-radius: 5px;
+  border: 1px solid #00d970;
+  background-color: #00D9701A;
+  cursor: pointer;
 }

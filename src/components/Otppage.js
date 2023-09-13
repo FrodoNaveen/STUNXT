@@ -26,6 +26,7 @@ const Otppage = () => {
         // ... your dialPad configuration
     ];
 
+
     const [resendOtp, setResendOtp] = useState(15);
     const [otp, setOtp] = useState("");
     const [generatedOTP, setGeneratedOTP] = useState("");
@@ -71,9 +72,9 @@ const Otppage = () => {
 
 
     return (
-        <div className="container card mt-5 phoneSize">
+        <div className="mainContainer card mt-5 phoneSize">
             <Time />
-            <div className="mt-5 text-center">
+            <div className="container mt-5 text-center">
                 <b style={{ color: "#4d4d4d" }}>Enter Code</b>
                 <p className="mt-2" style={{ color: "#636363" }}>
                     Enter the 4-digit code sent to your phone number{" "}

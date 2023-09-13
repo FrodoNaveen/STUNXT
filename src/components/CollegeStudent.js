@@ -17,9 +17,14 @@ const CollegeStudent = () => {
   // Generate an array of years (e.g., from 2022 to 2030)
   const years = Array.from({ length: 12 }, (_, index) => 2010 + index);
 
+  function goToHomePage() {
+    navigate("/home")
+  }
+
   return (
     <div
       className="container card mt-5 phoneSize"
+      style={{ display: "flex", flexDirection: "column" }}
     >
       <Time />
       <div className="mt-5">
@@ -117,20 +122,13 @@ const CollegeStudent = () => {
             </div>
           </form>
         </div>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <div className="mt-5 mb-5" style={{ marginTop: "auto" }}>
-          <div className="float-center ">
-            <button className="btn w-100 rounded-5 continueBtn">
-              <b>Continue</b>
-            </button>
-          </div>
+
+        <div className="container" style={{ marginTop: "250px" }}>
+          <span className="btn w-100 rounded-5  continueBtn" onClick={goToHomePage}><b>Continue</b></span>
         </div>
       </div>
     </div>
+
   );
 };
 

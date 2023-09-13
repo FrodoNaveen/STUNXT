@@ -27,11 +27,12 @@ const CompanyDetails = () => {
 
   return (
     <div
-      className="container card mt-5 phoneSize"
+      className="mainContainer card mt-5 phoneSize"
+      style={{ display: "flex", flexDirection: "column" }}
     >
       <Time />
 
-      <div className="mt-5">
+      <div className="container mt-5">
         <div className="row">
           <div className="col-1">
             <p className="cursorPointer" onClick={goToLoginasPage}>
@@ -117,15 +118,8 @@ const CompanyDetails = () => {
           </form>
         </div>
       </div>
-      <div className="mt-5 flex-grow-1"></div>
-      <div className="mt-5 mb-5" >
-        <div className="float-center ">
-          <div className="">
-            <button className="btn w-100 rounded-5 continueBtn" onClick={goTo}>
-              <b>Continue</b>
-            </button>
-          </div>
-        </div>
+      <div className="container" style={{ marginTop: "850px", position: "absolute" }}>
+        <span className="btn w-100 rounded-5  continueBtn"><b>Continue</b></span>
       </div>
     </div>
   );

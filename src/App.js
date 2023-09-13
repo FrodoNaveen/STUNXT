@@ -15,6 +15,11 @@ import CollegeStaff from "./components/CollegeStaff";
 import CollegeStaff2 from "./components/StaffPage2";
 import CompanyDetails from "./components/CompanyDetails";
 import Home from "./components/Home";
+import Feeds from "./components/Feeds";
+import Events from "./components/Events";
+import Network from "./components/Network";
+import Career from "./components/Career";
+
 
 function App() {
   return (
@@ -43,6 +48,10 @@ function App() {
         <Route path="/staff2" element={<CollegeStaff2 />}></Route>
         <Route path="/companylogin" element={<CompanyDetails />}></Route>
         <Route path="/home" element={<Home />}></Route>
+        <Route path="/feeds" element={<Feeds />}></Route>
+        <Route path="/events" element={<Events />}></Route>
+        <Route path="/network" element={<Network />}></Route>
+        <Route path="/career" element={<Career />}></Route>
       </Routes>
     </div>
   );

@@ -15,7 +15,7 @@ const CollegeStaff2 = () => {
   }
 
   // Generate an array of years (e.g., from 2022 to 2030)
-  const years = Array.from({ length: 20 }, (_, index) => 1990 + index);
+  // const years = Array.from({ length: 20 }, (_, index) => 1990 + index);
 
   // Function to handle radio button click
   const handleRadioChange = (e) => {
@@ -25,7 +25,7 @@ const CollegeStaff2 = () => {
   return (
     <div
       className="container card mt-5 phoneSize"
-      style={{ minHeight: "100vh", display: "flex", flexDirection: "column" }}
+      style={{ display: "flex", flexDirection: "column" }}
     >
       <Time />
 
@@ -136,15 +136,8 @@ const CollegeStaff2 = () => {
           </form>
         </div>
       </div>
-      <div className="mt-5 flex-grow-1"></div>
-      <div className="mt-5 mb-5" style={{ marginTop: "auto" }}>
-        <div className="float-center ">
-          <div className="">
-            <button className="btn w-100 rounded-5 continueBtn">
-              <b>Continue</b>
-            </button>
-          </div>
-        </div>
+      <div className="container" style={{ marginTop: "850px", position: "absolute", marginLeft: "-12px" }}>
+        <span className="btn w-100 rounded-5  continueBtn"><b>Continue</b></span>
       </div>
     </div>
   );

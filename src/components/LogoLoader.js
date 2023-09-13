@@ -22,7 +22,7 @@ const LogoLoader = () => {
   }, [navigate]);
 
   return (
-    <div className="container card mt-5 phoneSize">
+    <div className="mainContainer card mt-5 phoneSize">
       <Time />
       <div className="logo-container">
         <img src={logo} className="logo" alt="logo" />
