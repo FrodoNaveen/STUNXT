@@ -161,7 +161,34 @@ body {
   border-top: 1px solid #d2cfcf;
   position: absolute;
   bottom: 0;
-  width: 380px;
-  margin-bottom: 10px;
+  width: 398px;
   border-radius: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+}
+
+.mainBody {
+  overflow: scroll;
+}
+
+.b_100 {
+  margin-bottom: 100px;
+}
+
+.borderWhite {
+  border-color: white;
+}
+
+.appGreen {
+  color: #00d970;
+}
+
+.wishNowBtn {
+  width: 88px;
+  height: 30px;
+  border-radius: 5px;
+  border: 1px solid #00d970;
+  background-color: #00D9701A;
+  cursor: pointer;
 }
