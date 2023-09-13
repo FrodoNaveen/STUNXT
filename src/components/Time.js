@@ -20,7 +20,7 @@ const Time = () => {
   }, []);
 
   return (
-    <div className="container bg-white p-2">
+    <div className="container rounded bg-white p-2">
       <span className="float-start">
         <b>{time}</b>
       </span>
