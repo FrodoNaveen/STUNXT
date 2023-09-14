@@ -12,18 +12,35 @@ const Events = () => {
   const index = 2
 
   const eventHeader = ["Events", "Registered", "Attended", "Wishlist"]
-  const eventCategories = ["All", "Categories1", "Categories2", "Categories3", "Categories4", "Categories5"]
+  const eventCategories = ["All", "Sports", "Dance", "Science", "Singing", "Exhibition"]
 
   const [selectEventHeader, setSelectEventHeader] = useState()
+  const [categories, setCategories] = useState(AllData)
+  const [categoryName, setCategoryName] = useState("")
 
 
   function changeEventHeader(ele) {
     setSelectEventHeader(ele)
   }
 
+  function changeToClickedCategory(category) {
+    setCategoryName(category)
+    if (category === "All") {
+      setCategories(AllData)
+    } else {
+      let newData = AllData.filter((ele) => {
+        return ele.eventCategory === category
+      })
+      setCategories(newData)
+    }
+
+  }
+
   useEffect(() => {
     setSelectEventHeader("Events")
+    setCategoryName("All")
   }, [])
+
   return (
     <div className="mainContainer bg-body-secondary card mt-5 phoneSize">
       <Time />
@@ -62,7 +79,9 @@ const Events = () => {
         <div className="d-flex scrollHide" style={{ overflow: "auto" }}>
           {eventCategories.map((ele) => (
             <div>
-              <small className="card ms-3 p-1 borderWhite cursorPointer">{ele}</small>
+              {categoryName === ele ? <small className="card ms-3 p-1 cursorPointer" style={{ backgroundColor: "#00d970", borderColor: "#00d970" }} onClick={() => changeToClickedCategory(ele)}>{ele}</small>
+                : <small className="card ms-3 p-1 borderWhite cursorPointer" onClick={() => changeToClickedCategory(ele)}>{ele}</small>
+              }
             </div>
           ))}
         </div>
@@ -71,12 +90,12 @@ const Events = () => {
       <div className="container scrollHide" style={{ overflow: "scroll" }}>
         {/* all events */}
         <div className="b_100">
-          {AllData.map((ele) => (
+          {categories.map((ele) => (
             <div className="container-fluid bg-white mt-3">
               <div className="pt-3 pb-3">
                 <div className="row">
                   <div className="col-4">
-                    <img src={ele.image} alt="eventimage" style={{ width: "100px", height: "100px" }} />
+                    <img src={ele.eventImage} alt="eventimage" style={{ width: "100px", height: "100px" }} />
                   </div>
                   <div className="col-8 ps-0">
                     <div className="float-start">
