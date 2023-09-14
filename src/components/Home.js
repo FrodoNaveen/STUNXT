@@ -5,7 +5,7 @@ import { MdVerified } from "react-icons/md"
 import upcomingeventlogo from "../images/Home/upcomingevents.svg"
 import cake from "../images/Home/cake.svg"
 import birthdays from "./Birthdaydata"
-import eventsData from "./EventsData";
+import upComingEventsData from "./eventsdata/Upcomingeventsdata";
 
 
 const Home = () => {
@@ -43,7 +43,7 @@ const Home = () => {
             <div className="row">
               <b><img src={upcomingeventlogo} alt="handshakeicon" /> Upcoming Events</b>
               <div className="mt-3">
-                {eventsData.map((ele) => (
+                {upComingEventsData.map((ele) => (
                   <div className="row mb-3">
                     <div className="col-3">
                       <img src={ele.eventImage} alt="eventbanner" />

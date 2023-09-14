@@ -2,8 +2,10 @@ import Time from "./Time";
 import Navbar from "./Navbar";
 import { useEffect, useState } from "react";
 import filterlogo from "../images/Home/filterlogo.svg"
-import event3 from "../images/Home/Event3.png"
+// import event3 from "../images/Home/Event3.png"
 import savelogo from "../images/Home/savelogo.svg"
+import AllData from "./eventsdata/AllEvent";
+
 
 const Events = () => {
 
@@ -31,8 +33,8 @@ const Events = () => {
         <div className=" card-fluid d-flex justify-content-around text-center">
           {eventHeader.map((ele, index) => (
             <div>
-              {selectEventHeader === ele ? <span style={{ color: "#00d970" }} onClick={() => changeEventHeader(ele)}><b>{ele}</b></span>
-                : <span style={{ color: "#00000099" }} onClick={() => changeEventHeader(ele)}>{ele}</span>
+              {selectEventHeader === ele ? <span className="cursorPointer" style={{ color: "#00d970" }} onClick={() => changeEventHeader(ele)}><b>{ele}</b></span>
+                : <span className="cursorPointer" style={{ color: "#00000099" }} onClick={() => changeEventHeader(ele)}>{ele}</span>
               }
             </div>
           ))}
@@ -69,131 +71,33 @@ const Events = () => {
       <div className="container scrollHide" style={{ overflow: "scroll" }}>
         {/* all events */}
         <div className="b_100">
-          <div className="container-fluid bg-white mt-3">
-            <div className="pt-3 pb-3">
-              <div className="row">
-                <div className="col-4">
-                  <img src={event3} alt="eventimage" style={{ width: "100px", height: "100px" }} />
-                </div>
-                <div className="col-8 ps-0">
-                  <div className="float-start">
-                    <small>Category</small>
+          {AllData.map((ele) => (
+            <div className="container-fluid bg-white mt-3">
+              <div className="pt-3 pb-3">
+                <div className="row">
+                  <div className="col-4">
+                    <img src={ele.image} alt="eventimage" style={{ width: "100px", height: "100px" }} />
                   </div>
-                  <div className="float-end">
-                    <small><img className="text-danger" src={savelogo} alt="savelogo" /></small>
-                  </div>
-
-                  <br />
-                  <b>Event Title</b>
-                  <br />
-                  <small><i class="fa-regular fa-calendar"></i> 12/12/2023</small>
-                  <br />
-                  <small><i class="fa-solid fa-location-dot"></i> SNS college</small>
-                </div>
-
-              </div>
-            </div>
-          </div>
-          <div className="container-fluid bg-white mt-3">
-            <div className="pt-3 pb-3">
-              <div className="row">
-                <div className="col-4">
-                  <img src={event3} alt="eventimage" style={{ width: "100px", height: "100px" }} />
-                </div>
-                <div className="col-8 ps-0">
-                  <div className="float-start">
-                    <small>Category</small>
-                  </div>
-                  <div className="float-end">
-                    <small><img className="text-danger" src={savelogo} alt="savelogo" /></small>
+                  <div className="col-8 ps-0">
+                    <div className="float-start">
+                      <small>{ele.eventCategory}</small>
+                    </div>
+                    <div className="float-end">
+                      <small><img className="text-danger" src={savelogo} alt="savelogo" /></small>
+                    </div>
+                    <br />
+                    <b>{ele.eventTitle}</b>
+                    <br />
+                    <small><i class="fa-regular fa-calendar"></i> {ele.eventDate}</small>
+                    <br />
+                    <small><i class="fa-solid fa-location-dot"></i> {ele.eventLocation}</small>
                   </div>
 
-                  <br />
-                  <b>Event Title</b>
-                  <br />
-                  <small><i class="fa-regular fa-calendar"></i> 12/12/2023</small>
-                  <br />
-                  <small><i class="fa-solid fa-location-dot"></i> SNS college</small>
-                </div>
-
-              </div>
-            </div>
-          </div>
-          <div className="container-fluid bg-white mt-3">
-            <div className="pt-3 pb-3">
-              <div className="row">
-                <div className="col-4">
-                  <img src={event3} alt="eventimage" style={{ width: "100px", height: "100px" }} />
-                </div>
-                <div className="col-8 ps-0">
-                  <div className="float-start">
-                    <small>Category</small>
-                  </div>
-                  <div className="float-end">
-                    <small><img className="text-danger" src={savelogo} alt="savelogo" /></small>
-                  </div>
-
-                  <br />
-                  <b>Event Title</b>
-                  <br />
-                  <small><i class="fa-regular fa-calendar"></i> 12/12/2023</small>
-                  <br />
-                  <small><i class="fa-solid fa-location-dot"></i> SNS college</small>
-                </div>
-
-              </div>
-            </div>
-          </div>
-          <div className="container-fluid bg-white mt-3">
-            <div className="pt-3 pb-3">
-              <div className="row">
-                <div className="col-4">
-                  <img src={event3} alt="eventimage" style={{ width: "100px", height: "100px" }} />
-                </div>
-                <div className="col-8 ps-0">
-                  <div className="float-start">
-                    <small>Category</small>
-                  </div>
-                  <div className="float-end">
-                    <small><img className="text-danger" src={savelogo} alt="savelogo" /></small>
-                  </div>
-
-                  <br />
-                  <b>Event Title</b>
-                  <br />
-                  <small><i class="fa-regular fa-calendar"></i> 12/12/2023</small>
-                  <br />
-                  <small><i class="fa-solid fa-location-dot"></i> SNS college</small>
-                </div>
-
-              </div>
-            </div>
-          </div>
-
-          <div className="container-fluid bg-white mt-3">
-            <div className="pt-3 pb-3">
-              <div className="row">
-                <div className="col-4">
-                  <img src={event3} alt="eventimage" style={{ width: "100px", height: "100px" }} />
-                </div>
-                <div className="col-8 ps-0">
-                  <div className="float-start">
-                    <small>Category</small>
-                  </div>
-                  <div className="float-end">
-                    <small><img className="text-danger" src={savelogo} alt="savelogo" /></small>
-                  </div>
-
-                  <br />
-                  <b>Event Title</b>
-                  <br />
-                  <small><i class="fa-regular fa-calendar"></i> 12/12/2023</small>
-                  <br />
-                  <small><i class="fa-solid fa-location-dot"></i> SNS college</small>
                 </div>
               </div>
             </div>
-          </div>
+          ))}
+
         </div>
       </div>
       <Navbar index={index} />
