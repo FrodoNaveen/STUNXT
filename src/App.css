@@ -196,3 +196,24 @@ body {
 .scrollHide::-webkit-scrollbar {
   display: none;
 }
+
+
+/* for Map in event page */
+.mapouter {
+  position: relative;
+  text-align: right;
+  width: 350px;
+  height: 200px;
+}
+
+.gmap_canvas {
+  overflow: hidden;
+  background: none !important;
+  width: 350px;
+  height: 200px;
+}
+
+.gmap_iframe {
+  width: 350px !important;
+  height: 200px !important;
+}

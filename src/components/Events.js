@@ -19,7 +19,6 @@ const Events = () => {
   const [selectEventHeader, setSelectEventHeader] = useState("")
   const [categories, setCategories] = useState(AllData)
   const [categoryName, setCategoryName] = useState("")
-  const [eventDescriptionPage, setEventDescriptionPage] = useState([])
 
 
 
@@ -48,7 +47,6 @@ const Events = () => {
   }, [])
 
   function gotoeventpage(ele) {
-    setEventDescriptionPage(ele)
     navigate("/eventdetailspage", { state: { ele } })
   }
 
