@@ -132,6 +132,8 @@ const FeedPost = ({ post }) => {
   );
 };
 const Feeds = () => {
+
+  const index = 1
   return (
     <div className="mainContainer bg-body-secondary card mt-5 phoneSize">
       <div className="fixed-elements">
@@ -146,7 +148,8 @@ const Feeds = () => {
         </div>
       </div>
       <div className="fixed-elements">
-        <Navbar />
+      
+      <Navbar index={index} />
       </div>
     </div>
   );
