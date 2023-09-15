@@ -1,22 +1,27 @@
 import Time from "./Time";
 import Navbar from "./Navbar";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import filterlogo from "../images/Home/filterlogo.svg"
-// import event3 from "../images/Home/Event3.png"
 import savelogo from "../images/Home/savelogo.svg"
 import AllData from "./eventsdata/AllEvent";
+import trendingevents from "./eventsdata/Trendingevents";
 
 
 const Events = () => {
 
   const index = 2
+  const navigate = useNavigate()
 
   const eventHeader = ["Events", "Registered", "Attended", "Wishlist"]
   const eventCategories = ["All", "Sports", "Dance", "Science", "Singing", "Exhibition"]
-
-  const [selectEventHeader, setSelectEventHeader] = useState()
+  const [selectEventHeader, setSelectEventHeader] = useState("")
   const [categories, setCategories] = useState(AllData)
   const [categoryName, setCategoryName] = useState("")
+  const [eventDescriptionPage, setEventDescriptionPage] = useState([])
+
+
+
 
 
   function changeEventHeader(ele) {
@@ -41,6 +46,13 @@ const Events = () => {
     setCategoryName("All")
   }, [])
 
+  function gotoeventpage(ele) {
+    setEventDescriptionPage(ele)
+    navigate("/eventdetailspage", { state: { ele } })
+  }
+
+
+
   return (
     <div className="mainContainer bg-body-secondary card mt-5 phoneSize">
       <Time />
@@ -49,7 +61,7 @@ const Events = () => {
       <div className=" container bg-white pt-3 pb-2" style={{ boxShadow: "0px 15px 10px -15px #111" }}>
         <div className=" card-fluid d-flex justify-content-around text-center">
           {eventHeader.map((ele, index) => (
-            <div>
+            <div key={index}>
               {selectEventHeader === ele ? <span className="cursorPointer" style={{ color: "#00d970" }} onClick={() => changeEventHeader(ele)}><b>{ele}</b></span>
                 : <span className="cursorPointer" style={{ color: "#00000099" }} onClick={() => changeEventHeader(ele)}>{ele}</span>
               }
@@ -77,8 +89,8 @@ const Events = () => {
       {/* Event categories */}
       <div className="conatiner-fluid mt-4 me-2">
         <div className="d-flex scrollHide" style={{ overflow: "auto" }}>
-          {eventCategories.map((ele) => (
-            <div>
+          {eventCategories.map((ele, index) => (
+            <div key={index}>
               {categoryName === ele ? <small className="card ms-3 p-1 cursorPointer" style={{ backgroundColor: "#00d970", borderColor: "#00d970" }} onClick={() => changeToClickedCategory(ele)}>{ele}</small>
                 : <small className="card ms-3 p-1 borderWhite cursorPointer" onClick={() => changeToClickedCategory(ele)}>{ele}</small>
               }
@@ -87,40 +99,54 @@ const Events = () => {
         </div>
       </div>
 
-      <div className="container scrollHide" style={{ overflow: "scroll" }}>
-        {/* all events */}
-        <div className="b_100">
-          {categories.map((ele) => (
-            <div className="container-fluid bg-white mt-3">
-              <div className="pt-3 pb-3">
-                <div className="row">
-                  <div className="col-4">
-                    <img src={ele.eventImage} alt="eventimage" style={{ width: "100px", height: "100px" }} />
-                  </div>
-                  <div className="col-8 ps-0">
-                    <div className="float-start">
-                      <small>{ele.eventCategory}</small>
-                    </div>
-                    <div className="float-end">
-                      <small><img className="text-danger" src={savelogo} alt="savelogo" /></small>
-                    </div>
-                    <br />
-                    <b>{ele.eventTitle}</b>
-                    <br />
-                    <small><i class="fa-regular fa-calendar"></i> {ele.eventDate}</small>
-                    <br />
-                    <small><i class="fa-solid fa-location-dot"></i> {ele.eventLocation}</small>
-                  </div>
+      <div className=" scrollHide" style={{ overflow: "scroll" }}>
+        {/* Trending Events */}
+        <div className="mt-4">
+          <b className="ms-3">Trending Events</b>
+          <div className="mt-3 d-flex scrollHide" style={{ overflow: "auto" }}>
+            {trendingevents.map((ele, index) => (
+              <img key={index} className="ms-3 cursorPointer" src={ele.eventImage} alt="event" />
+            ))}
+          </div>
+        </div>
 
+
+        {/* all events */}
+        <div className="container">
+          <div className="b_100">
+            {categories.map((ele, index) => (
+              <div className="container-fluid bg-white mt-3 cursorPointer" key={index} onClick={() => gotoeventpage(ele)}>
+                <div className="pt-3 pb-3">
+                  <div className="row">
+                    <div className="col-4">
+                      <img src={ele.eventImage} alt="eventimage" style={{ width: "100px", height: "100px" }} />
+                    </div>
+                    <div className="col-8 ps-0">
+                      <div className="float-start">
+                        <small>{ele.eventCategory}</small>
+                      </div>
+                      <div className="float-end">
+                        <small><img style={{ Color: "red" }} src={savelogo} alt="savelogo" /></small>
+                      </div>
+                      <br />
+                      <b>{ele.eventTitle}</b>
+                      <br />
+                      <small><i className="fa-regular fa-calendar"></i> {ele.eventDate}</small>
+                      <br />
+                      <small><i className="fa-solid fa-location-dot"></i> {ele.eventLocation}</small>
+                    </div>
+
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
 
+          </div>
         </div>
       </div>
       <Navbar index={index} />
     </div >
+
   );
 };
 export default Events;

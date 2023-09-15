@@ -1,6 +1,6 @@
-import event1 from "../../images/Home/Event1.png"
-import event2 from "../../images/Home/Event2.png"
-import event3 from "../../images/Home/Event3.png"
+import event1 from "../../images/Home/Event1.svg"
+import event2 from "../../images/Home/Event2.svg"
+import event3 from "../../images/Home/Event3.svg"
 
 
 const AllData = [
