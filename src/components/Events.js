@@ -4,7 +4,8 @@ import { useEffect, useState } from "react";
 import filterlogo from "../images/Home/filterlogo.svg"
 // import event3 from "../images/Home/Event3.png"
 import savelogo from "../images/Home/savelogo.svg"
-import AllData from "./eventsdata/AllEvent";
+import AllData from "../data/eventsdata/AllEvent";
+
 
 
 const Events = () => {
