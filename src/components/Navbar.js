@@ -18,7 +18,14 @@ const Navbar = () => {
             navigate("/home")
         } else if (name==="Feeds") {
             navigate("/feeds")
+        }else if (name==="Events") {
+            navigate("/events")
+        }else if (name==="Network") {
+            navigate("/network")
+        }else if (name==="Career") {
+            navigate("/career")
         }
+        
         setNav(index)
     }
 
