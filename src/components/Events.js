@@ -4,8 +4,9 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import filterlogo from "../images/Home/filterlogo.svg"
 import savelogo from "../images/Home/savelogo.svg"
-import AllData from "./eventsdata/AllEvent";
-import trendingevents from "./eventsdata/Trendingevents";
+import AllData from "../data/eventsdata/AllEvent";
+import trendingevents from "../data/eventsdata/Trendingevents";
+
 
 
 const Events = () => {

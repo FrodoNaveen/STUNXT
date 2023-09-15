@@ -5,7 +5,7 @@ import { MdVerified } from "react-icons/md"
 import upcomingeventlogo from "../images/Home/upcomingevents.svg"
 import cake from "../images/Home/cake.svg"
 import birthdays from "./Birthdaydata"
-import upComingEventsData from "./eventsdata/Upcomingeventsdata";
+import upComingEventsData from "../data/eventsdata/Upcomingeventsdata";
 
 
 const Home = () => {

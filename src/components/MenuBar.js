@@ -1,16 +1,16 @@
-import profileicon from "../images/Menubar/Ellipse 19.png";
-import searchicon from "../images/Menubar/search.png";
-import notificationicon from "../images/Menubar/notifications.png";
-import forum from "../images/Menubar/forum.png";
-import proirityhigh from "../images/Menubar/priority_high.png";
-import greenicon from "../images/Menubar/green icon.png";
+import profileicon from "../images/Menubar/Ellipse 19.svg";
+import searchicon from "../images/Menubar/search.svg";
+import notificationicon from "../images/Menubar/notifications.svg";
+import forum from "../images/Menubar/forum.svg";
+import proirityhigh from "../images/Menubar/priority_high.svg";
+import greenicon from "../images/Menubar/Rectangle 378.svg";
 
 const MenuBar = () => {
   return (
     <nav className="navbar bg-white navbar-white pt-3">
       <div className="container-fluid ">
         <div className="d-flex justify-content-start align-items-center position-relative">
-          <div style={{ marginRight: "10px" }}></div>
+          <div style={{ marginRight: "0px" }}></div>
 
           {/* Profile Icon (Left) */}
           <a className="navbar-profile" href="#">
@@ -41,7 +41,7 @@ const MenuBar = () => {
                 alt="Priority High"
                 style={{
                   filter: "brightness(0)", // Make the icon black
-                  width: "5px", // Adjust the icon size
+                  width: "10px", // Adjust the icon size
                 }}
               />
             </div>
@@ -81,7 +81,7 @@ const MenuBar = () => {
               />
             </div>
           </a>
-          <div style={{ marginRight: "-10px" }}></div>
+          <div style={{ marginRight: "10px" }}></div>
         </div>
       </div>
     </nav>
