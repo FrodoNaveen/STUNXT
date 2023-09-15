@@ -23,11 +23,11 @@ const CollegeStudent = () => {
 
   return (
     <div
-      className="container card mt-5 phoneSize"
+      className="mainContainer card mt-5 phoneSize"
       style={{ display: "flex", flexDirection: "column" }}
     >
       <Time />
-      <div className="mt-5">
+      <div className=" container mt-5">
         <div className="row">
           <div className="col-1">
             <p className="cursorPointer" onClick={goToLoginasPage}>

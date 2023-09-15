@@ -9,6 +9,7 @@ const Otppage = () => {
     const location = useLocation();
     const { phoneNumber } = location.state || {};
 
+
     const dialPad = [
         1,
         2,
