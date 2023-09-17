@@ -46,6 +46,9 @@ const Events = () => {
     setCategoryName("All")
   }, [])
 
+
+
+  // navigate and pass the element data to navigated page
   function gotoeventpage(ele) {
     navigate("/eventdetailspage", { state: { ele } })
   }
@@ -73,7 +76,7 @@ const Events = () => {
 
       {/* Search input and filter icon */}
       <div className="container mt-4">
-        <div className="row">
+        <div className="row ps-1">
           <div className="col-9">
             <input className="form-control rounded-4 borderWhite text-start" placeholder="Search State here..." style={{ height: "60px", paddingRight: "20px" }} />
           </div>
@@ -125,7 +128,7 @@ const Events = () => {
                         <small>{ele.eventCategory}</small>
                       </div>
                       <div className="float-end">
-                        <small><img style={{ Color: "red" }} src={savelogo} alt="savelogo" /></small>
+                        <small><img src={savelogo} alt="savelogo" /></small>
                       </div>
                       <br />
                       <b>{ele.eventTitle}</b>
