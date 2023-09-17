@@ -17,7 +17,6 @@ const EventDetailsPage = ({ event }) => {
 
 
 
-
     return (
         <div className="mainContainer card mt-5 phoneSize">
             <Time />
@@ -49,9 +48,9 @@ const EventDetailsPage = ({ event }) => {
                 <div className="container mt-2">
                     <b>Event Title</b>
                     <br />
-                    <small><i className="fa-regular fa-calendar"></i> {ele.eventDate}</small>
-                    <br />
                     <small><i className="fa-solid fa-location-dot"></i> {ele.eventLocation}</small>
+                    <br />
+                    <small><i className="fa-regular fa-calendar"></i> {ele.eventDate}</small>
                 </div>
             </div>
 
@@ -70,7 +69,7 @@ const EventDetailsPage = ({ event }) => {
                             <div class="mapouter">
                                 <div class="gmap_canvas">
                                     <iframe class="gmap_iframe rounded-2 "
-
+                                        title="eventlocation"
                                         frameborder="0"
                                         scrolling="no"
                                         marginheight="0"

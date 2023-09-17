@@ -193,6 +193,16 @@ body {
   cursor: pointer;
 }
 
+.inviteBtn {
+  width: 88px;
+  height: 30px;
+  border-radius: 5px;
+  border: 1px solid #1EB7CD;
+  background-color: #1EB7CD1A;
+  cursor: pointer;
+
+}
+
 .scrollHide::-webkit-scrollbar {
   display: none;
 }
@@ -216,4 +226,8 @@ body {
 .gmap_iframe {
   width: 350px !important;
   height: 200px !important;
+}
+
+.scroll {
+  overflow: scroll;
 }
