@@ -6,12 +6,34 @@ import upcomingeventlogo from "../images/Home/upcomingevents.svg"
 import cake from "../images/Home/cake.svg"
 import birthdays from "./Birthdaydata"
 import upComingEventsData from "../data/eventsdata/Upcomingeventsdata";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 
 const Home = () => {
 
   const index = 0
 
+  const data = upComingEventsData.slice(0, 3)
+  const navigate = useNavigate()
+
+  const [upComingEvents, setUpComingEvents] = useState(data)
+  const [viewAll, setViewAll] = useState(false)
+
+
+  function viewAllUpComingEvents() {
+    setUpComingEvents(upComingEventsData)
+    setViewAll(true)
+  }
+
+  function viewLessUpcomingEvents() {
+    setUpComingEvents(data)
+    setViewAll(false)
+  }
+
+  function goToEventDetails(upcomingevents) {
+    navigate("/eventdetailspage", { state: { upcomingevents } })
+  }
 
   return (
 
@@ -43,8 +65,8 @@ const Home = () => {
             <div className="row">
               <b><img src={upcomingeventlogo} alt="handshakeicon" /> Upcoming Events</b>
               <div className="mt-3">
-                {upComingEventsData.map((ele) => (
-                  <div className="row mb-3">
+                {upComingEvents.map((ele) => (
+                  <div className="row mb-3 cursorPointer" onClick={() => goToEventDetails(ele)}>
                     <div className="col-3">
                       <img src={ele.eventImage} alt="eventbanner" />
                     </div>
@@ -58,7 +80,8 @@ const Home = () => {
                   </div>
                 ))}
                 <div className="mt-4 mb-3 text-center">
-                  <b className="appGreen cursorPointer">View all</b>
+                  {viewAll ? <b className="appGreen cursorPointer" onClick={viewLessUpcomingEvents}>View Less</b> :
+                    <b className="appGreen cursorPointer" onClick={viewAllUpComingEvents}>View all</b>}
                 </div>
               </div>
             </div>
