@@ -13,11 +13,12 @@ const EventDetailsPage = () => {
 
 
     function goToMainEventPage() {
-        { ele ? navigate("/events") : navigate("/home") }
+        ele ? navigate("/events") : navigate("/home")
 
     }
 
-    console.log(upcomingevents)
+
+
 
 
     return (
@@ -51,17 +52,17 @@ const EventDetailsPage = () => {
                 <div className="container mt-2">
                     <b>Event Title</b>
                     <br />
-                    <small><i className="fa-solid fa-location-dot"></i> {ele.eventLocation}</small>
+                    <small><i className="fa-solid fa-location-dot me-1"></i> {ele.eventLocation}</small>
                     <br />
-                    <small><i className="fa-regular fa-calendar"></i> {ele.eventDate}</small>
+                    <small><i className="fa-regular fa-calendar me-1"></i> {ele.eventDate}</small>
                 </div>
             </div> : <div className="card bg-white ms-4 borderWhite " style={{ height: "120px", width: "350px", marginTop: "-65px", boxShadow: "0px 8px 16px 0px rgba(0,0,0,0.15)" }}>
                 <div className="container mt-2">
                     <b>Event Title</b>
                     <br />
-                    <small><i className="fa-solid fa-location-dot"></i> {upcomingevents.eventLocation}</small>
+                    <small><i className="fa-solid fa-location-dot me-1"></i> {upcomingevents.eventLocation}</small>
                     <br />
-                    <small><i className="fa-regular fa-calendar"></i> {upcomingevents.eventDate}</small>
+                    <small><i className="fa-regular fa-calendar me-1"></i> {upcomingevents.eventDate}</small>
                 </div>
             </div>}
 
@@ -85,8 +86,7 @@ const EventDetailsPage = () => {
                                         scrolling="no"
                                         marginheight="0"
                                         marginwidth="0"
-                                        src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=coimbatore
-                                        &amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed">
+                                        src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=salem&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed">
                                     </iframe>
                                     <a href="https://connectionsgame.org/">Connections Puzzle</a>
                                 </div>

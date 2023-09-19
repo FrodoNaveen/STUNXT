@@ -7,13 +7,24 @@ import Time from "./Time"
 const Personaldetailspage1 = () => {
 
     const navigate = useNavigate()
+    const bday = useRef()
 
     const [goToSecondDetailsPage, setGoToSecondDetailsPage] = useState(false)
-    const bday = useRef()
+
+    const [formData1, setFormData1] = useState({
+        firstName: "",
+        middleName: "",
+        lastName: "",
+        emailId: "",
+        gender: "",
+        dateOfBirth: ""
+    })
+
+    const isFormFilled = formData1.firstName && formData1.lastName && formData1.emailId && formData1.gender && formData1.dateOfBirth
 
 
     function goToNextFormPage() {
-        setGoToSecondDetailsPage(true)
+        isFormFilled ? setGoToSecondDetailsPage(true) : alert("please fill the details")
     }
 
     function goToOtpPage() {
@@ -30,6 +41,12 @@ const Personaldetailspage1 = () => {
 
     function typeTextChange() {
         bday.current.type = "text"
+    }
+
+    function fillFormData(e) {
+        setFormData1((prevState) => {
+            return { ...prevState, [e.target.name]: e.target.value }
+        })
     }
 
     return (
@@ -49,52 +66,112 @@ const Personaldetailspage1 = () => {
                     </div>
                 </div>
             </div>
-            {goToSecondDetailsPage ? <Personaldetailspage2 /> :
+            {goToSecondDetailsPage ? <Personaldetailspage2 formData1={formData1} /> :
                 <div>
                     <div className="container formDetails">
                         <form>
                             <div className="row">
                                 <div className="col-12">
-                                    <input className="form-control formInputHeight" placeholder="First name" />
+                                    {formData1.firstName ? <small className="formdata">First name</small> : null}
+                                    <input
+                                        className={formData1.firstName ? "form-control formInputheight" : "form-control formInputHeight"}
+                                        placeholder="First name"
+                                        value={formData1.firstName}
+                                        name="firstName"
+                                        onChange={fillFormData}
+                                        autoComplete="off"
+                                        required />
                                 </div>
                             </div>
                             <div className="row mt-4">
                                 <div className="col-12">
-                                    <input className="form-control formInputHeight" placeholder="Middle name (Optional)" />
+                                    {formData1.middleName ? <small className="formdata">Middle name</small> : null}
+                                    <input
+                                        type="text"
+                                        className={formData1.middleName ? "form-control formInputheight" : "form-control formInputHeight"}
+                                        placeholder="Middle name (Optional)"
+                                        value={formData1.middleName}
+                                        name="middleName"
+                                        onChange={fillFormData}
+                                        autoComplete="off" />
                                 </div>
                             </div>
                             <div className="row mt-4">
                                 <div className="col-12">
-                                    <input className="form-control formInputHeight" placeholder="Last name" />
+                                    {formData1.lastName ? <small className="formdata">Last name</small> : null}
+                                    <input
+                                        type="text"
+                                        className={formData1.lastName ? "form-control formInputheight" : "form-control formInputHeight"}
+                                        placeholder="Last name"
+                                        name="lastName"
+                                        onChange={fillFormData}
+                                        value={formData1.lastName}
+                                        autoComplete="off"
+                                        required />
                                 </div>
                             </div>
                             <div className="row mt-4">
                                 <div className="col-12">
-                                    <input className="form-control formInputHeight" placeholder="Email ID" />
+                                    {formData1.emailId ? <small className="formdata">Email ID</small> : null}
+                                    <input
+                                        type="text"
+                                        className={formData1.emailId ? "form-control formInputheight" : "form-control formInputHeight"}
+                                        placeholder="Email ID"
+                                        name="emailId"
+                                        onChange={fillFormData}
+                                        value={formData1.emailId}
+                                        autoComplete="off"
+                                        required />
                                 </div>
                             </div>
                             <div className="row mt-4">
                                 <div className="col-6">
-                                    <div className="card formInputHeight">
-                                        <span style={{ color: "#636363" }}><input type="radio" name="gender" className="formInputRadio" /> Male</span>
+                                    <div className={formData1.gender === "Male" ? "card formInputheight" : "card formInputHeight"}>
+                                        <span style={{ color: "#636363" }}>
+                                            <input
+                                                type="radio"
+                                                name="gender"
+                                                value="Male"
+                                                checked={formData1.gender === "Male"}
+                                                onChange={fillFormData}
+                                                className="formInputRadio"
+                                                required /> Male</span>
                                     </div>
                                 </div>
                                 <div className="col-6">
-                                    <div className="card formInputHeight">
-                                        <span style={{ color: "#636363" }}><input type="radio" name="gender" className="formInputRadio" /> Female</span>
+                                    <div className={formData1.gender === "Female" ? "card formInputheight" : "card formInputHeight"}>
+                                        <span style={{ color: "#636363" }}>
+                                            <input
+                                                type="radio"
+                                                name="gender"
+                                                value="Female"
+                                                checked={formData1.gender === "Female"}
+                                                onChange={fillFormData}
+                                                className="formInputRadio"
+                                                required /> Female</span>
                                     </div>
 
                                 </div>
                             </div>
                             <div className="row mt-4">
                                 <div className="col-12">
-                                    <input ref={bday} className="form-control formInputHeight" placeholder="Date of Birth" onFocus={typeDateChange} onBlur={typeTextChange} />
+                                    {formData1.dateOfBirth ? <small className="formdata">Date of Birth</small> : null}
+                                    <input ref={bday}
+                                        className={formData1.dateOfBirth ? "form-control formInputheight" : "form-control formInputHeight"}
+                                        placeholder="Date of Birth"
+                                        value={formData1.dateOfBirth}
+                                        name="dateOfBirth"
+                                        onChange={fillFormData}
+                                        onFocus={typeDateChange}
+                                        onBlur={typeTextChange}
+                                        autoComplete="off"
+                                        required />
                                 </div>
                             </div>
                         </form>
                     </div>
                     <div className="container mt-5">
-                        <span className="cursorPointer text-secondary float-end mt-5" onClick={goToNextFormPage}><i className="fa-solid fa-circle-arrow-right fa-2xl"></i></span>
+                        <span className="cursorPointer text-secondary float-end mt-5" onClick={goToNextFormPage}><i className="fa-solid fa-circle-arrow-right fa-2xl" style={{ color: isFormFilled ? "#00d970" : null }}></i></span>
                     </div>
                 </div>}
 
