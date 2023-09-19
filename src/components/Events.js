@@ -18,7 +18,7 @@ const Events = () => {
     "Dance",
     "Science",
     "Singing",
-    "Exhibition",
+    "Exhibition time",
   ];
   const [selectEventHeader, setSelectEventHeader] = useState("");
   const [categories, setCategories] = useState(AllData);
@@ -112,7 +112,7 @@ const Events = () => {
 
       {/* Event categories */}
       <div className="conatiner-fluid mt-4 me-2">
-        <div className="d-flex scrollHide" style={{ overflow: "auto" }}>
+        <div className="d-flex scrollHide no-wrap" style={{ overflow: "auto" }}>
           {eventCategories.map((ele, index) => (
             <div key={index}>
               {categoryName === ele ? (
