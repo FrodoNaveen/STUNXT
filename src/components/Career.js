@@ -16,6 +16,7 @@ const Career = () => {
     "Freelance",
     "Part Time",
     "Full Time",
+
   ];
   const [SelectCareerHeader, setSelectCareerHeader] = useState("Jobs");
   const [categories, setCategories] = useState(AllData);
@@ -114,7 +115,7 @@ const Career = () => {
       {/* Career categories */}
       {SelectCareerHeader === "Jobs" && (
         <div className="conatiner-fluid mt-4 me-2">
-          <div className="d-flex scrollHide" style={{ overflow: "auto" }}>
+          <div className="d-flex scrollHide no-wrap" style={{ overflow: "auto" }}>
             {careerCategories.map((ele, index) => (
               <div key={index}>
                 {categoryName === ele ? (
@@ -169,8 +170,8 @@ const Career = () => {
                               ele.careerCategory === "Internships"
                                 ? "#1EB7CD"
                                 : ele.careerCategory === "Freelance"
-                                ? "#00D970"
-                                : "#666666",
+                                  ? "#00D970"
+                                  : "#666666",
                           }}
                         >
                           {ele.careerCategory}

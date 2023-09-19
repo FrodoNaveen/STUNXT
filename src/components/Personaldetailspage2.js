@@ -32,7 +32,7 @@ const Personaldetailspage2 = ({ formData1 }) => {
     }
 
     function goToLoginAsPage() {
-        isFormFilled ? navigate("/loginaspage") : alert("Fill the details")
+        isFormFilled ? navigate("/loginaspage") : alert("Fill all the details")
         console.log(personalDetails)
     }
 
