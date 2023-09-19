@@ -143,7 +143,7 @@ const Verification = () => {
             </div>
             <div className="col-10">
               <div>
-                {phoneNumber && phoneNumber.length === 10 ? (
+                {phoneNumber ? (
                   <small
                     className="inputNumberSuccess"
                     style={{
