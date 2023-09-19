@@ -22,6 +22,11 @@ const CollegeStaff2 = () => {
     setIsUndergoingEducation(e.target.value === "Yes");
   };
 
+  function goToHomePage() {
+    navigate("/home")
+  }
+
+
   return (
     <div
       className="container card mt-5 phoneSize"
@@ -137,7 +142,7 @@ const CollegeStaff2 = () => {
         </div>
       </div>
       <div className="container" style={{ marginTop: "850px", position: "absolute", marginLeft: "-12px" }}>
-        <span className="btn w-100 rounded-5  continueBtn"><b>Continue</b></span>
+        <span className="btn w-100 rounded-5  continueBtn" onClick={goToHomePage} ><b>Continue</b></span>
       </div>
     </div>
   );
