@@ -125,7 +125,7 @@ const MenuBar = () => {
       </div>
             {/* Profile Sidebar Overlay */}
             {isProfileSidebarOpen && (
-        <div className="profile-sidebar-overlay" onClick={closeProfileSidebar}></div>
+        <div className="profile-sidebar-overlay" onClick={openProfileSidebar}></div>
       )}
 
       {/* Profile Sidebar */}
