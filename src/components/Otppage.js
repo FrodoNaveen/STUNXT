@@ -73,7 +73,7 @@ const Otppage = () => {
 
 
     return (
-        <div className="mainContainer card mt-5 phoneSize">
+        <div className="mainContainer card mt-sm-5 phoneSize">
             <Time />
             <div className="container mt-5 text-center">
                 <b style={{ color: "#4d4d4d" }}>Enter Code</b>

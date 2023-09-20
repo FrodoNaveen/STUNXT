@@ -4,8 +4,23 @@ import notificationicon from "../images/Menubar/notifications.svg";
 import forum from "../images/Menubar/forum.svg";
 import proirityhigh from "../images/Menubar/priority_high.svg";
 import greenicon from "../images/Menubar/Rectangle 378.svg";
+import './MenuBar.css'; // Import your CSS file for MenuBar styles
+import { useState } from "react";
 
 const MenuBar = () => {
+  const [isProfileSidebarOpen, setIsProfileSidebarOpen] = useState(false);
+
+  // Function to open the profile sidebar
+  const openProfileSidebar = () => {
+    setIsProfileSidebarOpen(true);
+  };
+
+  // Function to close the profile sidebar
+  const closeProfileSidebar = () => {
+    setIsProfileSidebarOpen(false);
+  };
+
+
   return (
     <nav className="navbar bg-white navbar-white pt-3">
       <div className="container-fluid ">
@@ -13,7 +28,7 @@ const MenuBar = () => {
           <div style={{ marginRight: "0px" }}></div>
 
           {/* Profile Icon (Left) */}
-          <a className="navbar-profile" href="#">
+          <a className="navbar-profile" href="#" onClick={openProfileSidebar}>
             <img
               src={profileicon}
               alt="Avatar Logo"
@@ -84,6 +99,19 @@ const MenuBar = () => {
           <div style={{ marginRight: "10px" }}></div>
         </div>
       </div>
+            {/* Profile Sidebar Overlay */}
+            {isProfileSidebarOpen && (
+        <div className="profile-sidebar-overlay" onClick={closeProfileSidebar}></div>
+      )}
+
+      {/* Profile Sidebar */}
+      {isProfileSidebarOpen && (
+        <div className="profile-sidebar">
+          {/* Sidebar content goes here */}
+          <div>Profile Sidebar Content</div>
+          <button onClick={closeProfileSidebar}>Close Sidebar</button>
+        </div>
+      )}
     </nav>
   );
 };

@@ -2,12 +2,21 @@ body {
   background-color: black;
 }
 
-.phoneSize {
+/* .phoneSize {
   width: 400px;
   height: 940px;
 
-  /* width and height auto responsive */
-}
+
+} */
+@media (max-width: 567px) {
+  /* Adjustments for smaller screens (e.g., smartphones) */
+
+  .phoneSize {
+    width: 100%; /* Full width on smaller screens */
+    height: auto; /* Allow the height to adjust based on content */
+
+    /* You can also add other responsive styles as needed */
+  }
 
 .mainContainer {
   margin: auto;
@@ -188,7 +197,7 @@ input[type=radio]:checked {
   border-top: 1px solid #d2cfcf;
   position: absolute;
   bottom: 0;
-  width: 398px;
+  width: auto;
   border-radius: 10px;
   padding-left: 10px;
   padding-right: 10px;
@@ -268,4 +277,5 @@ input[type=radio]:checked {
   margin-left: 22px;
   margin-top: -10px;
   background-color: white;
+}
 }
