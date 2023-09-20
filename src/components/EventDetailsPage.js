@@ -48,8 +48,8 @@ const EventDetailsPage = () => {
             </div>
 
             {/* card inside image */}
-            {ele ? <div className="card bg-white ms-4 borderWhite " style={{ height: "120px", width: "350px", marginTop: "-65px", boxShadow: "0px 8px 16px 0px rgba(0,0,0,0.15)" }}>
-                <div className="container mt-2">
+            {ele ? <div className="card bg-white ms-3 me-3 borderWhite " style={{ height: "120px", width: "auto", marginTop: "-65px", boxShadow: "0px 8px 16px 0px rgba(0,0,0,0.15)" }}>
+                <div className="container mt-2 pb-3">
                     <b>Event Title</b>
                     <br />
                     <small><i className="fa-solid fa-location-dot me-1"></i> {ele.eventLocation}</small>
@@ -57,7 +57,7 @@ const EventDetailsPage = () => {
                     <small><i className="fa-regular fa-calendar me-1"></i> {ele.eventDate}</small>
                 </div>
             </div> : <div className="card bg-white ms-4 borderWhite " style={{ height: "120px", width: "350px", marginTop: "-65px", boxShadow: "0px 8px 16px 0px rgba(0,0,0,0.15)" }}>
-                <div className="container mt-2">
+                <div className="container mt-2 pb-3">
                     <b>Event Title</b>
                     <br />
                     <small><i className="fa-solid fa-location-dot me-1"></i> {upcomingevents.eventLocation}</small>
@@ -67,11 +67,11 @@ const EventDetailsPage = () => {
             </div>}
 
             {/* Event description */}
-            <div className="container">
+            <div className="container scroll scrollHide">
                 <div className="container mt-4">
                     <b>Description</b>
                     <br />
-                    <div className="card borderWhite" style={{ width: "370px", height: "90px", color: "#706D6D", fontSize: "12px", lineHeight: "18px" }}>
+                    <div className="card borderWhite" style={{ width: "auto", height: "90px", color: "#706D6D", fontSize: "12px", lineHeight: "18px" }}>
                         <small>Inaculis orci ut, blandit quam. Donec in elit auctor, finibus quam in, phar. Proin id ligula dictum, covalis enim ut, facilisis massa. Mauris a nisi ut sapien blandit imperdi. Interdum et malesuada fames ac ante ipsum primis in faucibs. Sed posuere egestas nunc ut tempus. Fu ipsum dolor sit amet. Read More..</small>
                     </div>
                     <div className="mt-2">
@@ -94,7 +94,7 @@ const EventDetailsPage = () => {
                         </div>
                     </div>
                 </div>
-                <div className="container mt-1">
+                <div className="container mt-1 pb-5">
                     <div className="row">
                         <div className="col-10">
                             <span

@@ -40,19 +40,21 @@ const Navbar = (props) => {
     { image: <FaUserFriends size="20px" />, name: "Network" },
     { image: <PiSuitcaseSimpleLight size="20px" />, name: "Career" }]
     return (
-
-        <ul className="nav d-flex container-fluid bg-white justify-content-between navBar" >
-            {navBarFooter.map((ele, index) => (
-                <li className="nav-item text-center" key={index} onClick={() => goToAnotherNav(ele.name)}>
-                    {nav === index ?
-                        <span className="nav-link cursorPointer" style={{ color: "#00d970" }}>{ele.image}</span>
-                        :
-                        <span className="nav-link text-black cursorPointer">{ele.image}</span>
-                    }
-                    <span>{ele.name}</span>
-                </li>
-            ))}
-        </ul>
+        // added container fluid 
+        <div className="container-fluid">
+            <ul className="nav bg-white justify-content-between navBar" >
+                {navBarFooter.map((ele, index) => (
+                    <li className="nav-item text-center" key={index} onClick={() => goToAnotherNav(ele.name)}>
+                        {nav === index ?
+                            <span className="nav-link cursorPointer" style={{ color: "#00d970" }}>{ele.image}</span>
+                            :
+                            <span className="nav-link text-black cursorPointer">{ele.image}</span>
+                        }
+                        <span>{ele.name}</span>
+                    </li>
+                ))}
+            </ul>
+        </div>
 
     )
 }

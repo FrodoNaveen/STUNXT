@@ -148,8 +148,8 @@ const Feeds = () => {
         </div>
       </div>
       <div className="fixed-elements">
-      
-      <Navbar index={index} />
+
+        <Navbar index={index} />
       </div>
     </div>
   );

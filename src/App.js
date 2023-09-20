@@ -20,7 +20,7 @@ import Events from "./components/Events";
 import Network from "./components/Network";
 import Career from "./components/Career";
 import EventDetailsPage from "./components/EventDetailsPage";
-import ProfileSidebar from "./components/ProfileSidebar";
+
 
 
 function App() {
@@ -55,7 +55,6 @@ function App() {
         <Route path="/network" element={<Network />}></Route>
         <Route path="/career" element={<Career />}></Route>
         <Route path="/eventdetailspage" element={<EventDetailsPage />}></Route>
-        <Route path="/profilesidebar" element={<ProfileSidebar />}></Route>
       </Routes>
     </div>
   );

@@ -28,7 +28,7 @@ const Network = () => {
 
       {/* NetworkHeader */}
       <div
-        className=" container bg-white pt-3 pb-2"
+        className=" container-fluid bg-white pt-3 pb-2"
         style={{ boxShadow: "0px 15px 10px -15px #111" }}
       >
         <div className=" card-fluid d-flex justify-content-around text-center">

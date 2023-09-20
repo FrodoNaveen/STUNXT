@@ -35,22 +35,25 @@ const Home = () => {
     navigate("/eventdetailspage", { state: { upcomingevents } })
   }
 
+
   return (
 
     <div className="mainContainer bg-body-secondary card mt-5 phoneSize">
       <Time />
       <MenuBar />
+
       <div className="container scrollHide scroll">
 
         {/* verify alert block */}
         <div className="card bg-white mt-3 borderWhite">
           <div className="container row">
             <div className="col-3 mt-3">
-              <p className="text-center" style={{ color: "#4d4d4d" }}>
+              {/* text-sm-md start */}
+              <p className="text-center text-sm-start text-md-start" style={{ color: "#4d4d4d" }}>
                 <MdVerified size="50px" color="#00d970" />
               </p>
             </div>
-            <div className="col-9 mt-2 mb-2">
+            <div className="col-9 mt-2 mb-2 text-sm-start">
               <b>Verify Profile</b>
               <div className="mt-1">
                 <small className="text-muted">Join your college club and become a verified user</small>
@@ -67,7 +70,7 @@ const Home = () => {
               <div className="mt-3">
                 {upComingEvents.map((ele) => (
                   <div className="row mb-3 cursorPointer" onClick={() => goToEventDetails(ele)}>
-                    <div className="col-3">
+                    <div className="col-3 ">
                       <img src={ele.eventImage} alt="eventbanner" />
                     </div>
                     <div className="col-9 ps-3 pe-0 ">
@@ -88,6 +91,18 @@ const Home = () => {
           </div>
         </div>
 
+        {/* <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom">Toggle bottom offcanvas</button>
+
+            <div class="offcanvas offcanvas-bottom" style={{ width: "400px", margin: "auto" }} tabindex="-1" id="offcanvasBottom" aria-labelledby="offcanvasBottomLabel">
+              <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasBottomLabel">Offcanvas bottom</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+              </div>
+              <div class="offcanvas-body small">
+                ...
+              </div>
+            </div> */}
+
         {/* birthday wishing block */}
 
         <div className="card bg-white mt-3 borderWhite b_100">
@@ -95,8 +110,8 @@ const Home = () => {
             <div className="row pt-2">
               <b><img src={cake} alt="handshakeicon" /> <span className="p-2">Today and upcoming birthdays</span></b>
               <div className="mt-3">
-                {birthdays.map((ele) => (
-                  <div className="row mb-3">
+                {birthdays.map((ele, index) => (
+                  <div key={index} className="row mb-3">
                     <div className="col-3">
                       <img style={{ borderRadius: "40px" }} src={ele.profile} alt="personprofile" />
                     </div>
@@ -110,14 +125,17 @@ const Home = () => {
                     </div>
                   </div>
                 ))}
+
               </div>
+
             </div>
           </div>
         </div>
-      </div>
-      <Navbar index={index} />
-    </div >
 
+      </div>
+
+      <Navbar index={index} />
+    </div>
   );
 
 
