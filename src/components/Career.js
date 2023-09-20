@@ -46,7 +46,6 @@ const Career = () => {
   return (
     <div className="mainContainer bg-body-secondary card mt-5 phoneSize">
       <Time />
-
       <div
         className=" container bg-white pt-3 pb-2"
         style={{ boxShadow: "0px 15px 10px -15px #111" }}
