@@ -18,7 +18,7 @@ const Events = () => {
     "Dance",
     "Science",
     "Singing",
-    "Exhibition time",
+    "Exhibition",
   ];
   const [selectEventHeader, setSelectEventHeader] = useState("");
   const [categories, setCategories] = useState(AllData);
@@ -56,7 +56,7 @@ const Events = () => {
 
       {/* EventHeader */}
       <div
-        className=" container bg-white pt-3 pb-2"
+        className=" container-fluid bg-white pt-3 pb-2"
         style={{ boxShadow: "0px 15px 10px -15px #111" }}
       >
         <div className=" card-fluid d-flex justify-content-around text-center">
@@ -111,8 +111,8 @@ const Events = () => {
       </div>
 
       {/* Event categories */}
-      <div className="conatiner-fluid mt-4 me-2">
-        <div className="d-flex scrollHide no-wrap" style={{ overflow: "auto" }}>
+      <div className="conatiner mt-4 me-2">
+        <div className="container d-flex scrollHide no-wrap scroll">
           {eventCategories.map((ele, index) => (
             <div key={index}>
               {categoryName === ele ? (
@@ -140,7 +140,7 @@ const Events = () => {
 
       <div className=" scrollHide" style={{ overflow: "scroll" }}>
         {/* Trending Events */}
-        <div className="mt-4">
+        <div className="container mt-4">
           <b className="ms-3">Trending Events</b>
           <div className="mt-3 d-flex scrollHide" style={{ overflow: "auto" }}>
             {trendingevents.map((ele, index) => (
@@ -172,7 +172,7 @@ const Events = () => {
                         style={{ width: "100px", height: "100px" }}
                       />
                     </div>
-                    <div className="col-8 ps-0">
+                    <div className="col-8">
                       <div className="float-start">
                         <small
                           style={{

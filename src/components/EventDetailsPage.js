@@ -94,7 +94,7 @@ const EventDetailsPage = () => {
                         </div>
                     </div>
                 </div>
-                <div className="container mt-1">
+                <div className="container mt-1 pb-5">
                     <div className="row">
                         <div className="col-10">
                             <span
