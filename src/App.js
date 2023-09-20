@@ -22,6 +22,7 @@ import Career from "./components/Career";
 import EventDetailsPage from "./components/EventDetailsPage";
 
 
+
 function App() {
   return (
     <div>
