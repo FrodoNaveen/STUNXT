@@ -65,7 +65,7 @@ const MenuBar = () => {
           </a>
         </div>
 
-        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+        <div style={{ width: "200px" }} class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
           <div class="offcanvas-header">
             <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -123,8 +123,8 @@ const MenuBar = () => {
           <div style={{ marginRight: "10px" }}></div>
         </div>
       </div>
-            {/* Profile Sidebar Overlay */}
-            {isProfileSidebarOpen && (
+      {/* Profile Sidebar Overlay */}
+      {isProfileSidebarOpen && (
         <div className="profile-sidebar-overlay" onClick={openProfileSidebar}></div>
       )}
 
