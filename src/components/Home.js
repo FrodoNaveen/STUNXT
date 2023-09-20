@@ -41,16 +41,19 @@ const Home = () => {
     <div className="mainContainer bg-body-secondary card mt-5 phoneSize">
       <Time />
       <MenuBar />
+
       <div className="container scrollHide scroll">
+
         {/* verify alert block */}
         <div className="card bg-white mt-3 borderWhite">
           <div className="container row">
             <div className="col-3 mt-3">
-              <p className="text-center" style={{ color: "#4d4d4d" }}>
+              {/* text-sm-md start */}
+              <p className="text-center text-sm-start text-md-start" style={{ color: "#4d4d4d" }}>
                 <MdVerified size="50px" color="#00d970" />
               </p>
             </div>
-            <div className="col-9 mt-2 mb-2">
+            <div className="col-9 mt-2 mb-2 text-sm-start">
               <b>Verify Profile</b>
               <div className="mt-1">
                 <small className="text-muted">Join your college club and become a verified user</small>
@@ -67,7 +70,7 @@ const Home = () => {
               <div className="mt-3">
                 {upComingEvents.map((ele) => (
                   <div className="row mb-3 cursorPointer" onClick={() => goToEventDetails(ele)}>
-                    <div className="col-3">
+                    <div className="col-3 ">
                       <img src={ele.eventImage} alt="eventbanner" />
                     </div>
                     <div className="col-9 ps-3 pe-0 ">
@@ -128,6 +131,7 @@ const Home = () => {
             </div>
           </div>
         </div>
+
       </div>
 
       <Navbar index={index} />
