@@ -131,6 +131,7 @@ const Home = () => {
             </div>
           </div>
         </div>
+
       </div>
 
       <Navbar index={index} />
