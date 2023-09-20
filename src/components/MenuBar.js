@@ -6,6 +6,8 @@ import proirityhigh from "../images/Menubar/priority_high.svg";
 import greenicon from "../images/Menubar/Rectangle 378.svg";
 
 const MenuBar = () => {
+
+
   return (
     <nav className="navbar bg-white navbar-white pt-3">
       <div className="container-fluid ">
@@ -13,13 +15,16 @@ const MenuBar = () => {
           <div style={{ marginRight: "0px" }}></div>
 
           {/* Profile Icon (Left) */}
-          <a className="navbar-profile" href="#">
+          <a className="navbar-profile" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
             <img
               src={profileicon}
               alt="Avatar Logo"
               style={{ width: "40px" }}
               className="rounded-pill"
+
             />
+
+
             {/* Priority High Icon (Inside Profile Icon) */}
             <div
               className="priority-icon"
@@ -46,6 +51,28 @@ const MenuBar = () => {
               />
             </div>
           </a>
+        </div>
+
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <div>
+              Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists, etc.
+            </div>
+            <div class="dropdown mt-3">
+              <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                Dropdown button
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+              </ul>
+            </div>
+          </div>
         </div>
         <div className="d-flex justify-content-end align-items-center">
           {/* Search Icon */}

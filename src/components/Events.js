@@ -118,8 +118,10 @@ const Events = () => {
               {categoryName === ele ? (
                 <small
                   className="card ms-3 p-1 cursorPointer"
-                  style={{ backgroundColor: "#00d970", borderColor: "#00d970" }}
-                  onClick={() => changeToClickedCategory(ele)}
+                  style={{
+                    backgroundColor: "#00D9701A",
+                    borderColor: "#00d970",
+                  }} onClick={() => changeToClickedCategory(ele)}
                 >
                   {ele}
                 </small>
@@ -172,7 +174,15 @@ const Events = () => {
                     </div>
                     <div className="col-8 ps-0">
                       <div className="float-start">
-                        <small>{ele.eventCategory}</small>
+                        <small
+                          style={{
+                            color:
+                              ele.eventCategory === "Sports"
+                                ? "#1EB7CD"
+                                : ele.eventCategory === "Dance"
+                                  ? "#00D970"
+                                  : "#666666",
+                          }}>{ele.eventCategory}</small>
                       </div>
                       <div className="float-end">
                         <small>
