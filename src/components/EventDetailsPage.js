@@ -56,7 +56,7 @@ const EventDetailsPage = () => {
                     <br />
                     <small><i className="fa-regular fa-calendar me-1"></i> {ele.eventDate}</small>
                 </div>
-            </div> : <div className="card bg-white ms-4 borderWhite " style={{ height: "120px", width: "350px", marginTop: "-65px", boxShadow: "0px 8px 16px 0px rgba(0,0,0,0.15)" }}>
+            </div> : <div className="card bg-white ms-4 me-3 borderWhite " style={{ height: "120px", width: "auto", marginTop: "-65px", boxShadow: "0px 8px 16px 0px rgba(0,0,0,0.15)" }}>
                 <div className="container mt-2 pb-3">
                     <b>Event Title</b>
                     <br />
@@ -71,8 +71,8 @@ const EventDetailsPage = () => {
                 <div className="container mt-4">
                     <b>Description</b>
                     <br />
-                    <div className="card borderWhite" style={{ width: "auto", height: "90px", color: "#706D6D", fontSize: "12px", lineHeight: "18px" }}>
-                        <small>Inaculis orci ut, blandit quam. Donec in elit auctor, finibus quam in, phar. Proin id ligula dictum, covalis enim ut, facilisis massa. Mauris a nisi ut sapien blandit imperdi. Interdum et malesuada fames ac ante ipsum primis in faucibs. Sed posuere egestas nunc ut tempus. Fu ipsum dolor sit amet. Read More..</small>
+                    <div className="card borderWhite" style={{ width: "auto", height: "110px", color: "#706D6D", fontSize: "12px", lineHeight: "18px" }}>
+                        <small>It is happening in Inaculis orci ut, blandit quam. Donec in elit auctor, finibus quam in, phar. Proin id ligula dictum, covalis enim ut, facilisis massa. Mauris a nisi ut sapien blandit imperdi. Interdum et malesuada fames ac ante ipsum primis in faucibs. Sed posuere egestas nunc ut tempus. Fu ipsum dolor sit amet. Read More..</small>
                     </div>
                     <div className="mt-2">
                         <b>Venue & Location</b>
