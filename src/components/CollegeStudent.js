@@ -9,16 +9,20 @@ const CollegeStudent = () => {
   const [collegeName, setCollegeName] = useState("");
   const [department, setDepartment] = useState("");
   const [year, setYear] = useState("");
+  const [registerNumber, setRegisterNumber] = useState("")
 
   function goToLoginasPage() {
     navigate("/loginaspage");
   }
 
+  const isFormFilled = graduation && collegeName && department && year && registerNumber
+
   // Generate an array of years (e.g., from 2022 to 2030)
   const years = Array.from({ length: 12 }, (_, index) => 2010 + index);
 
   function goToHomePage() {
-    navigate("/home")
+    isFormFilled ? navigate("/home") : alert("please fill the details")
+
   }
 
   return (
@@ -117,6 +121,10 @@ const CollegeStudent = () => {
                 <input
                   className="form-control formInputHeight"
                   placeholder="Register Number (in ID Card)"
+                  onChange={(e) => setRegisterNumber(e.target.value)}
+                  value={registerNumber}
+                  name="registerNumber"
+
                 />
               </div>
             </div>
@@ -124,7 +132,7 @@ const CollegeStudent = () => {
         </div>
 
         <div className="container" style={{ marginTop: "250px" }}>
-          <span className="btn w-100 rounded-5  continueBtn" onClick={goToHomePage}><b>Continue</b></span>
+          <span className="btn w-100 rounded-5" style={{ backgroundColor: isFormFilled ? "#00d970" : "#636363", color: "white" }} onClick={goToHomePage}><b>Continue</b></span>
         </div>
       </div>
     </div>

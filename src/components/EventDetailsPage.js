@@ -1,6 +1,7 @@
 import Time from "./Time"
 import { useNavigate, useLocation } from "react-router-dom"
 import shareicon from "../images/Home/shareicon.svg"
+import { useEffect, useRef } from "react"
 
 
 const EventDetailsPage = () => {
@@ -10,13 +11,35 @@ const EventDetailsPage = () => {
 
     const { ele } = location.state || {}
     const { upcomingevents } = location.state || {}
+    const mapRef = useRef()
 
 
     function goToMainEventPage() {
         ele ? navigate("/events") : navigate("/home")
-
     }
 
+
+    //  updating map whenever the eventlocation changes
+
+    useEffect(() => {
+
+        const location = ele ? ele.eventLocation : upcomingevents.eventLocation
+
+        const className = "gmap_iframe rounded-2";
+        const title = "eventlocation";
+        const frameBorder = "0";
+        const scrolling = "no";
+        const marginh = "0";
+        const marginw = "0";
+        const src =
+            "https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=" + location + "&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed";
+
+        const iframeString = `<iframe  class="${className}" title="${title}" frameBorder="${frameBorder}"
+         scrolling="${scrolling}" marginHeight="${marginh}" marginWidth="${marginw}" src="${src}"></iframe>`;
+
+        mapRef.current.innerHTML = iframeString
+
+    }, [ele, upcomingevents])
 
 
 
@@ -56,7 +79,7 @@ const EventDetailsPage = () => {
                     <br />
                     <small><i className="fa-regular fa-calendar me-1"></i> {ele.eventDate}</small>
                 </div>
-            </div> : <div className="card bg-white ms-4 borderWhite " style={{ height: "120px", width: "350px", marginTop: "-65px", boxShadow: "0px 8px 16px 0px rgba(0,0,0,0.15)" }}>
+            </div> : <div className="card bg-white ms-4 me-3 borderWhite " style={{ height: "120px", width: "auto", marginTop: "-65px", boxShadow: "0px 8px 16px 0px rgba(0,0,0,0.15)" }}>
                 <div className="container mt-2 pb-3">
                     <b>Event Title</b>
                     <br />
@@ -71,23 +94,27 @@ const EventDetailsPage = () => {
                 <div className="container mt-4">
                     <b>Description</b>
                     <br />
-                    <div className="card borderWhite" style={{ width: "auto", height: "90px", color: "#706D6D", fontSize: "12px", lineHeight: "18px" }}>
-                        <small>Inaculis orci ut, blandit quam. Donec in elit auctor, finibus quam in, phar. Proin id ligula dictum, covalis enim ut, facilisis massa. Mauris a nisi ut sapien blandit imperdi. Interdum et malesuada fames ac ante ipsum primis in faucibs. Sed posuere egestas nunc ut tempus. Fu ipsum dolor sit amet. Read More..</small>
+                    <div className="card borderWhite" style={{ width: "auto", height: "110px", color: "#706D6D", fontSize: "12px", lineHeight: "18px" }}>
+                        <small>It is happening in Inaculis orci ut, blandit quam. Donec in elit auctor, finibus quam in, phar. Proin id ligula dictum, covalis enim ut, facilisis massa. Mauris a nisi ut sapien blandit imperdi. Interdum et malesuada fames ac ante ipsum primis in faucibs. Sed posuere egestas nunc ut tempus. Fu ipsum dolor sit amet. Read More..</small>
                     </div>
                     <div className="mt-2">
                         <b>Venue & Location</b>
                         <br></br>
+
+                        {/* Google map location */}
                         <div className="mt-3">
-                            <div class="mapouter">
-                                <div class="gmap_canvas">
-                                    <iframe class="gmap_iframe rounded-2 "
-                                        title="eventlocation"
-                                        frameborder="0"
-                                        scrolling="no"
-                                        marginheight="0"
-                                        marginwidth="0"
-                                        src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=salem&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed">
-                                    </iframe>
+                            <div className="mapouter">
+                                <div className="gmap_canvas">
+                                    <div ref={mapRef}>
+                                        <iframe className="gmap_iframe rounded-2 "
+                                            title="eventlocation"
+                                            frameborder="0"
+                                            scrolling="no"
+                                            marginheight="0"
+                                            marginwidth="0"
+                                            src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=salem&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed">
+                                        </iframe>
+                                    </div>
                                     <a href="https://connectionsgame.org/">Connections Puzzle</a>
                                 </div>
                             </div>

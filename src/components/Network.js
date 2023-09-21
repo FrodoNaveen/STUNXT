@@ -103,12 +103,12 @@ const Network = () => {
                           style={{ height: "50px", width: "50px" }}
                         />
                       </div>
-                      <div className="col-4">
+                      <div className="col-5">
                         <b>{ele.userName}</b>
                         <br />
                         <small>{ele.userCollege}</small>
                       </div>
-                      <div className="col-6 mt-2 text-end">
+                      <div className="col-5 mt-2 text-end">
                         <button className="wishNowBtn">
                           <small>Message</small>
                         </button>

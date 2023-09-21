@@ -137,7 +137,7 @@ const Verification = () => {
                         ? "#00d970"
                         : null,
                   }}
-                  readOnly // Use readOnly instead of placeholder for static text
+                // Use readOnly instead of placeholder for static text
                 />
               </span>
             </div>
