@@ -1,38 +1,10 @@
-/* MenuBar.css */
-/* Profile Sidebar (Initially Translated Out of View to the Left) */
-.profile-sidebar {
-    position: fixed;
-    top: 0;
-    left: -300px; /* Initially translate the sidebar out of view to the left */
-    width: 300px; /* Adjust the width as needed */
-    height: 100%;
-    background-color: #ffffff; /* Background color of the sidebar */
-    z-index: 101; /* Ensure the sidebar is above the overlay */
-    box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.2); /* Add a shadow for depth */
-    overflow-y: auto; /* Enable vertical scrolling if content overflows */
-    padding: 20px; /* Add padding to the sidebar content */
-    transition: left 0.3s ease-in-out; /* Add a smooth transition effect */
+.scrollable-content {
+    overflow-y: auto;
+    max-height: calc(100vh - 100px);
+    padding-bottom: 100px;
   }
   
-  /* Profile Sidebar Overlay and Sidebar Styles for Mobile and Web Views */
-  @media (max-width: 768px) {
-    .profile-sidebar-overlay {
-      display: block; /* Show the overlay for mobile screens */
-    }
-  
-    .profile-sidebar {
-      left: 0; /* Slide the sidebar into view from the left for mobile screens */
-    }
+  .scrollable-content::-webkit-scrollbar {
+    width: 0;
+    height: 0;
   }
-  
-  /* Additional Styles for Web (Desktop) View (Adjust as Needed) */
-  @media (min-width: 769px) {
-    .profile-sidebar-overlay {
-      display: none; /* Hide the overlay for web screens */
-    }
-  
-    .profile-sidebar {
-      left: 0; /* Keep the sidebar visible on the left for web screens */
-    }
-  }
-  
