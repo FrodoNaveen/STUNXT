@@ -28,6 +28,10 @@ const CollegeStaff = () => {
   // Generate an array of years (e.g., from 2022 to 2030)
   const years = Array.from({ length: 20 }, (_, index) => 1990 + index);
 
+  function skipGoToHomePage() {
+    navigate("/home")
+  }
+
   return (
     <div
       className="mainContainer card mt-5 phoneSize"
@@ -126,18 +130,18 @@ const CollegeStaff = () => {
       <div className="mt-5 flex-grow-1"></div>
       <div className="mt-10 mb-5 style={{ marginTop: 'auto' }}">
         <div className="float-start ">
-          <button className="btn" style={{ color: "#00d970" }}>
+          <span className="cursorPointer ms-3" style={{ color: "#00d970" }} onClick={skipGoToHomePage}>
             <b>Skip</b>
-          </button>
+          </span>
         </div>
         <div className="float-end ">
-          <button
-            className="btn"
-            style={{ color: "#00d970" }}
+          <span
+            className="cursorPointer me-3"
+            style={{ color: isFormFilled ? "#00d970" : "#636363" }}
             onClick={goToStaffPage2}
           >
             <i className="fa-solid fa-circle-arrow-right fa-2xl"></i>
-          </button>
+          </span>
         </div>
       </div>
     </div>

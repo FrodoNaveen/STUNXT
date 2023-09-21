@@ -18,7 +18,7 @@ const SuggestList = () => {
                                     <small>{ele.userCollege}</small>
                                 </div>
                                 <div className="col-6 mt-2">
-                                    <span className="float-start cursorPointer text-danger ms-2"><small>Remove</small></span>
+                                    <span className="float-start cursorPointer text-danger ms-1"><small>Remove</small></span>
                                     <button className="wishNowBtn float-end"><small>Follow</small></button>
                                 </div>
                             </div>

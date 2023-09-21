@@ -4,15 +4,15 @@ body {
 
 /* width and height auto responsive */
 
-/* .phoneSize {
-  width: 400px;
-  height: 940px;
-} */
-
 .phoneSize {
+  width: 400px;
+  height: 900px;
+}
+
+/* .phoneSize {
   width: auto;
   height: 100vh;
-}
+} */
 
 /* @media (min-width:567px) {
   .phoneSize {
@@ -29,7 +29,7 @@ body {
 }
 
 .welcomeBody {
-  height: 940px;
+  height: 800px;
 }
 
 .navicons {
@@ -254,7 +254,7 @@ input[type=radio]:checked {
 }
 
 
-/* for Map in event page */
+/* for Map in eventDetails page */
 .mapouter {
   position: relative;
   text-align: right;
