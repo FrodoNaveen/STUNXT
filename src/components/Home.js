@@ -29,6 +29,7 @@ const Home = () => {
   function viewLessUpcomingEvents() {
     setUpComingEvents(data)
     setViewAll(false)
+    // navigate("/events")
   }
 
   function goToEventDetails(upcomingevents) {
