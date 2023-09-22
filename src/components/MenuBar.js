@@ -10,7 +10,9 @@ import "./MenuBar.css";
 
 
 const MenuBar = () => {
-  
+
+
+
 
   return (
     <nav className="navbar bg-white navbar-white pt-3">
@@ -57,7 +59,7 @@ const MenuBar = () => {
           </a>
         </div>
 
-        <ProfileSidebar/>
+        <ProfileSidebar />
         <div className="d-flex justify-content-end align-items-center">
           {/* Search Icon */}
           <a className="navbar-search" href="#">
@@ -95,7 +97,7 @@ const MenuBar = () => {
           <div style={{ marginRight: "10px" }}></div>
         </div>
       </div>
-       
+
     </nav>
   );
 };

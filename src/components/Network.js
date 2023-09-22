@@ -7,6 +7,7 @@ import RequestList from "./RequestList"; // component
 import SuggestList from "./SuggestList";
 import ContactList from "./ContactList";
 
+
 const Network = () => {
   const index = 3;
 
@@ -62,7 +63,7 @@ const Network = () => {
           <div className="col-9">
             <input
               className="form-control rounded-4 borderWhite text-start"
-              placeholder="Search by name"
+              placeholder="Search by name..."
               style={{ height: "60px", paddingRight: "20px" }}
             />
           </div>

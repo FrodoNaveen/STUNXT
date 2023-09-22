@@ -18,7 +18,7 @@ const Events = () => {
     "Dance",
     "Science",
     "Singing",
-    "Exhibition",
+    "Exhibition time",
   ];
   const [selectEventHeader, setSelectEventHeader] = useState("");
   const [categories, setCategories] = useState(AllData);
@@ -86,13 +86,16 @@ const Events = () => {
 
       {/* Search input and filter icon */}
       <div className="container mt-4">
-        <div className="row ps-1">
+        <div className="row ms-1">
           <div className="col-9">
+
             <input
               className="form-control rounded-4 borderWhite text-start"
               placeholder="Search State here..."
               style={{ height: "60px", paddingRight: "20px" }}
+
             />
+            {/* <GrSearch style={{ marginTop: "-85px", marginLeft: "90%" }} /> */}
           </div>
           <div className="col-3">
             <div
