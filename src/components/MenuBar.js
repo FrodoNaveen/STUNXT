@@ -6,13 +6,16 @@ import proirityhigh from "../images/Menubar/priority_high.svg";
 import greenicon from "../images/Menubar/Rectangle 378.svg";
 import './MenuBar.css'; // Import your CSS file for MenuBar styles
 import ProfileSidebar from "./ProfileSidebar";
-import "./MenuBar.css";
+import { useNavigate } from "react-router-dom";
 
 
 const MenuBar = () => {
 
+  let navigate = useNavigate()
 
-
+  function goToChatBoxPage() {
+    navigate("/chatbox")
+  }
 
   return (
     <nav className="navbar bg-white navbar-white pt-3">
@@ -72,8 +75,8 @@ const MenuBar = () => {
           </a>
           <div style={{ marginRight: "20px" }}></div>
           {/* Forum Icon */}
-          <a className="navbar-forum" href="#" style={{ position: "relative" }}>
-            <img src={forum} alt="Forum Logo" />
+          <div className="navbar-forum cursorPointer" style={{ position: "relative" }}>
+            <img onClick={goToChatBoxPage} src={forum} alt="Forum Logo" />
             {/* Green Round Icon (Top Right Inside Forum Icon) */}
             <div
               className="green-icon"
@@ -93,7 +96,7 @@ const MenuBar = () => {
                 }}
               />
             </div>
-          </a>
+          </div>
           <div style={{ marginRight: "10px" }}></div>
         </div>
       </div>
