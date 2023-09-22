@@ -21,6 +21,7 @@ import Network from "./components/Network";
 import Career from "./components/Career";
 import EventDetailsPage from "./components/EventDetailsPage";
 import ProfilePage from "./components/ProfilePage";
+import ChatBox from "./components/ChatBox";
 
 
 
@@ -57,6 +58,7 @@ function App() {
         <Route path="/career" element={<Career />}></Route>
         <Route path="/eventdetailspage" element={<EventDetailsPage />}></Route>
         <Route path="/profilepage" element={<ProfilePage />}></Route>
+        <Route path="/chatbox" element={<ChatBox />}></Route>
       </Routes>
     </div>
   );

@@ -70,6 +70,9 @@ const Otppage = () => {
         }
     }
 
+    function reFreshPage() {
+        window.location.reload()
+    }
 
 
     return (
@@ -90,7 +93,7 @@ const Otppage = () => {
                                 marginLeft: "20px",
                                 borderRadius: "10px",
                                 border: "1px solid #636363",
-                                borderColor: otp && otp.length === 4 ? "#00d970" : "#636363",
+                                borderColor: otp === generatedOTP ? "#00d970" : "#636363",
                             }}
                             value={otp}
                             onChange={setOtp}
@@ -113,7 +116,7 @@ const Otppage = () => {
                 <div className="float-start">
                     <span style={{ color: "#636363" }}>Not received OTP?</span>
                     {resendOtp === 0 ? (
-                        <p className="cursorPointer" style={{ color: "#00d970" }}>
+                        <p className="cursorPointer" style={{ color: "#00d970" }} onClick={reFreshPage}>
                             Resend
                         </p>
                     ) : (
