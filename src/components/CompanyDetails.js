@@ -18,6 +18,7 @@ const CompanyDetails = () => {
 
   //Need to set
   // Function to navigate to the next page if the form is filled
+
   function goTo() {
     if (isFormFilled) {
       // Navigate to the next page
@@ -118,8 +119,8 @@ const CompanyDetails = () => {
           </form>
         </div>
       </div>
-      <div className="container" style={{ marginTop: "850px", position: "absolute" }}>
-        <span className="btn w-100 rounded-5  continueBtn"><b>Continue</b></span>
+      <div className="container" style={{ marginTop: "830px", position: "absolute" }}>
+        <span className="btn w-100 rounded-5  continueBtn" onClick={goTo}><b>Continue</b></span>
       </div>
     </div>
   );

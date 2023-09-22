@@ -4,15 +4,15 @@ body {
 
 /* width and height auto responsive */
 
-.phoneSize {
+/* .phoneSize {
   width: 400px;
   height: 900px;
-}
+} */
 
-/* .phoneSize {
+.phoneSize {
   width: auto;
   height: 100vh;
-} */
+}
 
 /* @media (min-width:567px) {
   .phoneSize {

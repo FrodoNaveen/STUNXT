@@ -22,6 +22,8 @@ const CollegeStaff = () => {
     if (isFormFilled) {
       // Navigate to the next page
       navigate("/staff2"); // Replace "/nextPage" with the actual URL
+    } else {
+      alert("please fill the details")
     }
   }
 

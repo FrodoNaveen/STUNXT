@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { BsBatteryFull } from "react-icons/bs"
 
 const Time = () => {
   const [time, setTime] = useState();
@@ -33,10 +34,15 @@ const Time = () => {
           <i className="fa-solid fa-wifi" style={{ color: "#000000" }}></i>
         </span>
         <span className="navicons">
-          <i
+
+          {/* font awesome icon */}
+          {/* <i
             className="fa-solid fa-battery-full"
             style={{ color: "#000000" }}
-          ></i>
+          ></i> */}
+
+          {/* react icons */}
+          <BsBatteryFull size="22px" />
         </span>
       </div>
     </div>

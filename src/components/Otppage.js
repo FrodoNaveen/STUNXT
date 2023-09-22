@@ -138,7 +138,7 @@ const Otppage = () => {
                     </div>
                 )}
             </div>
-            <div className="container dialpad mt-2 mb-3">
+            <div className="container dialpad mt-2 mb-3 ms-2">
                 {dialPad.map((ele, index) => (
                     <button
                         key={index}
