@@ -21,7 +21,7 @@ const ProfileSidebar = () => {
         <Time />
       </div>
       <div className="d-flex">
-        <div className="bg-danger" style={{ width: "90%", height: "100vh" }}>
+        <div className="bg-white" style={{ width: "90%", height: "100vh" }}>
           <div className="container">
             <div className="card bg-white borderWhite mt-3 rounded-3">
               <div className="row pt-4 pb-4" onClick={goToProfilePage}>
@@ -47,7 +47,7 @@ const ProfileSidebar = () => {
                 <div className="col-9">
                   <b>Achieve Your Goals</b>
                   <br />
-                  <small className="text-muted">Start completing goals and get a new batche and reward points</small>
+                  <small className="text-muted">Start completing goals and get a new batches and reward points</small>
                 </div>
               </div>
             </div>
