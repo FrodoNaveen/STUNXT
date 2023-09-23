@@ -22,7 +22,7 @@ const Time = () => {
 
   return (
     // added container fluid new
-    <div className="container-fluid  bg-white px-3 pt-2">
+    <div className="container-fluid  bg-white px-3 p-2">
       <span className="float-start">
         <b>{time}</b>
       </span>
