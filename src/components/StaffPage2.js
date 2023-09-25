@@ -29,7 +29,7 @@ const CollegeStaff2 = () => {
 
   return (
     <div
-      className="container card mt-5 phoneSize"
+      className="container card phoneSize"
       style={{ display: "flex", flexDirection: "column" }}
     >
       <Time />

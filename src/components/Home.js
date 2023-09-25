@@ -39,7 +39,7 @@ const Home = () => {
 
   return (
 
-    <div className="mainContainer bg-body-secondary card mt-5 phoneSize">
+    <div className="mainContainer bg-body-secondary card phoneSize">
       <Time />
       <MenuBar />
 

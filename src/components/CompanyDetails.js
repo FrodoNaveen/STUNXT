@@ -28,7 +28,7 @@ const CompanyDetails = () => {
 
   return (
     <div
-      className="mainContainer card mt-5 phoneSize"
+      className="mainContainer card phoneSize"
       style={{ display: "flex", flexDirection: "column" }}
     >
       <Time />

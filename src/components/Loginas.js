@@ -32,7 +32,7 @@ const Loginas = () => {
   }
 
   return (
-    <div className="mainContainer card mt-5 phoneSize">
+    <div className="mainContainer card phoneSize">
       <Time />
       <div className="container mt-5">
         <div className="row">

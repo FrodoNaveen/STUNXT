@@ -15,12 +15,12 @@ const ProfileSidebar = () => {
 
 
   return (
-    <div className="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+    <div className="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel" style={{ width: "100%", height: "100vh" }}>
       <div className="pt-2 pb-2">
         <Time />
       </div>
       <div className="d-flex">
-        <div className="bg-danger" style={{ width: "90%", height: "100vh" }}>
+        <div className="bg-secondary-subtle" style={{ width: "90%", height: "100vh" }}>
           <div className="container">
             <div className="card bg-white borderWhite mt-3 rounded-3">
               <div className="row pt-4 pb-4" onClick={goToProfilePage}>
@@ -35,7 +35,7 @@ const ProfileSidebar = () => {
               </div>
             </div>
           </div>
-          <div className="container" style={{ marginTop: "300px", }} >
+          <div className="container mb-2" style={{ bottom: "0", position: "fixed", width: "90%" }} >
 
             {/* Achieve your goals */}
             <div className="card borderWhite">
@@ -46,7 +46,7 @@ const ProfileSidebar = () => {
                 <div className="col-9">
                   <b>Achieve Your Goals</b>
                   <br />
-                  <small className="text-muted">Start completing goals and get a new batche and reward points</small>
+                  <small className="text-muted">Start completing goals and get a new batches and reward points</small>
                 </div>
               </div>
             </div>

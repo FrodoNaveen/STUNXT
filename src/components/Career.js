@@ -44,7 +44,7 @@ const Career = () => {
   }, []);
 
   return (
-    <div className="mainContainer bg-body-secondary card mt-5 phoneSize">
+    <div className="mainContainer bg-body-secondary card phoneSize">
       <Time />
       <div
         className=" container bg-white pt-3 pb-2"
