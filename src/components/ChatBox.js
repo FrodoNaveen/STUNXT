@@ -23,7 +23,7 @@ const ChatBox = () => {
     },
     {
         userImage: profileimage, userName: "Lionel Messi", userMessage: [{ message: "Hello Comedy", messageDate: "22 sep" }, { message: "Dei pombala Kamesh", messageDate: "15 Jun" },
-        { message: "I Won the world cup by cheating", messageDate: "15 Jun" }]
+        { message: "I Won the world cup", messageDate: "15 Jun" }]
     },
     {
         userImage: profileimage, userName: "CR7", userMessage: [{ message: "Hello Comedy", messageDate: "22 sep" }, { message: "Dei pombala Kamesh", messageDate: "15 Jun" },
@@ -32,7 +32,7 @@ const ChatBox = () => {
     ]
 
     return (
-        <div className="mainContainer bg-body-secondary card mt-5 phoneSize">
+        <div className="mainContainer bg-body-secondary card phoneSize">
             < Time />
 
             {/* chatBox Header */}

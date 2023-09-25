@@ -10,7 +10,7 @@ const Welcome = () => {
   }
 
   return (
-    <div className="mainContainer card mt-5 phoneSize">
+    <div className="mainContainer card phoneSize">
       <Time />
       <div className="container bg-body-tertiary welcomeBody">
         <img
