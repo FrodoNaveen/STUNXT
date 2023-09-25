@@ -15,8 +15,7 @@ const ProfileSidebar = () => {
 
 
   return (
-
-    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel" style={{ width: "100%" }}>
+    <div className="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
       <div className="pt-2 pb-2">
         <Time />
       </div>
@@ -36,7 +35,7 @@ const ProfileSidebar = () => {
               </div>
             </div>
           </div>
-          <div className="container" style={{ marginTop: "300px" }}>
+          <div className="container" style={{ marginTop: "300px", }} >
 
             {/* Achieve your goals */}
             <div className="card borderWhite">
