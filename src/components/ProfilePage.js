@@ -9,6 +9,7 @@ import proirityhigh from "../images/Profile/Group 166.svg";
 import dartIMG from "../images/dart_img.svg";
 import { useState, useEffect } from "react";
 import Time from "./Time";
+import "./ProfilePage.css";
 
 const ProfilePage = () => {
   let navigate = useNavigate();
@@ -36,6 +37,203 @@ const ProfilePage = () => {
   function goBack() {
     navigate("/home");
   }
+
+  // To add a new experience form when add icon clicked
+  const [userExperiences, setUserExperiences] = useState(
+    ProfileData.userExperiences || []
+  );
+  const [showExperienceForm, setShowExperienceForm] = useState(false);
+  const [newExperience, setNewExperience] = useState({
+    expType: "",
+    expTitle: "",
+    expStartDate: {
+      month: "",
+      year: "",
+    },
+    expEndDate: {
+      month: "",
+      year: "",
+    },
+    expOrganization: "",
+    expLocation: "",
+    expImage: null,
+  });
+  // Function to add a new experience
+  const addExperience = () => {
+    setShowExperienceForm(true);
+  };
+
+  // Function to close the experience form
+  const closeExperienceForm = () => {
+    setShowExperienceForm(false);
+  };
+
+  // Function to handle form submission
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    // Create a new experience object with the form input values
+    const experienceToAdd = {
+      expID: userExperiences.length + 1,
+      expImage: "./CareerData images/new_experience_img.svg", // Replace with actual image source
+      ...newExperience,
+    };
+
+    const totalExperience = calculateExperienceTotal(
+      newExperience.expStartDate,
+      newExperience.expEndDate
+    );
+
+    // Update the total experience in the experienceToAdd object
+    experienceToAdd.expTotal = totalExperience;
+
+    // Update the userExperiences state and ProfileData
+    setUserExperiences([...userExperiences, experienceToAdd]);
+    ProfileData.userExperiences = [...userExperiences, experienceToAdd];
+
+    // Close the form and reset the input fields
+    setShowExperienceForm(false);
+    setNewExperience({
+      expType: "",
+      expTitle: "",
+      expStartDate: {
+        month: "",
+        year: "",
+      },
+      expEndDate: {
+        month: "",
+        year: "",
+      },
+      expTotal: "",
+      expOrganization: "",
+      expLocation: "",
+      expImage: null,
+    });
+  };
+
+  // Function to handle image upload
+  const handleImageUpload = (e) => {
+    const selectedImage = e.target.files[0];
+    setNewExperience({
+      ...newExperience,
+      expImage: URL.createObjectURL(selectedImage),
+    });
+  };
+
+  //Function to clculate total experince
+  function calculateExperienceTotal(startDate, endDate) {
+    const startYear = parseInt(startDate.year, 10);
+    const endYear = parseInt(endDate.year, 10);
+
+    const monthNames = [
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun",
+      "Jul",
+      "Aug",
+      "Sep",
+      "Oct",
+      "Nov",
+      "Dec",
+    ];
+
+    const startMonthIndex = monthNames.indexOf(startDate.month);
+    const endMonthIndex = monthNames.indexOf(endDate.month);
+
+    let totalYears = endYear - startYear;
+    let totalMonths = endMonthIndex - startMonthIndex;
+
+    if (totalMonths < 0) {
+      totalYears--;
+      totalMonths += 12;
+    }
+
+    if (totalYears < 0) {
+      return "Invalid date range";
+    }
+
+    if (totalYears === 0) {
+      if (totalMonths === 1) {
+        return `${totalMonths} month`;
+      } else if (totalMonths > 1) {
+        return `${totalMonths} months`;
+      } else {
+        return "Less than a month";
+      }
+    } else {
+      if (totalMonths === 0) {
+        return `${totalYears} years`;
+      } else if (totalMonths === 1) {
+        return `${totalYears} years ${totalMonths} month`;
+      } else {
+        return `${totalYears} years ${totalMonths} months`;
+      }
+    }
+  }
+
+  // Function to calculate overall total experience in header section h6
+  const calculateTotalExperience = () => {
+    let totalYears = 0;
+    let totalMonths = 0;
+
+    // Loop through each experience and add its duration to totalYears and totalMonths
+    ProfileData.userExperiences.forEach((experience) => {
+      const expStartDate = experience.expStartDate;
+      const expEndDate = experience.expEndDate;
+
+      const { years, months } = calculateExperienceYearsAndMonths(
+        expStartDate,
+        expEndDate
+      );
+
+      totalYears += years;
+      totalMonths += months;
+    });
+
+    // Adjust totalMonths to include extra years
+    totalYears += Math.floor(totalMonths / 12);
+    totalMonths %= 12;
+
+    return `${totalYears} years ${totalMonths} months`;
+  };
+  const calculateExperienceYearsAndMonths = (startDate, endDate) => {
+    const monthNames = [
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun",
+      "Jul",
+      "Aug",
+      "Sep",
+      "Oct",
+      "Nov",
+      "Dec",
+    ];
+    const startYear = parseInt(startDate.year, 10);
+    const endYear = parseInt(endDate.year, 10);
+
+    const startMonthIndex = monthNames.indexOf(startDate.month);
+    const endMonthIndex = monthNames.indexOf(endDate.month);
+
+    let totalYears = endYear - startYear;
+    let totalMonths = endMonthIndex - startMonthIndex;
+
+    if (totalMonths < 0) {
+      totalYears--;
+      totalMonths += 12;
+    }
+
+    if (totalYears < 0) {
+      return { years: 0, months: 0 }; // Invalid date range
+    }
+
+    return { years: totalYears, months: totalMonths };
+  };
 
   return (
     <div
@@ -200,7 +398,7 @@ const ProfilePage = () => {
       {selectProfileCategories === "Experience" && (
         <div className="ms-3 mt-2 row">
           <div className="col-8">
-            <h6>Experience ({ProfileData.userTotalExperience})</h6>
+            <h6>Experience ({calculateTotalExperience()})</h6>
           </div>
           <div className="col ps-4 d-flex align-items-center">
             <div
@@ -216,7 +414,7 @@ const ProfilePage = () => {
                 marginLeft: "-20px",
               }}
             >
-              <BsPlus />
+              <BsPlus onClick={addExperience} />
             </div>
             <div
               className="rounded-circle p-1"
@@ -234,6 +432,200 @@ const ProfilePage = () => {
               <MdEdit />
             </div>
           </div>
+        </div>
+      )}
+
+      {/* Experience Form */}
+      {showExperienceForm && (
+        <div className="fullscreen-form">
+          <form onSubmit={handleSubmit}>
+            <div className="mb-3">
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Experience Type"
+                value={newExperience.expType}
+                onChange={(e) =>
+                  setNewExperience({
+                    ...newExperience,
+                    expType: e.target.value,
+                  })
+                }
+                required
+              />
+            </div>
+            <div className="mb-3">
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Experience Title"
+                value={newExperience.expTitle}
+                onChange={(e) =>
+                  setNewExperience({
+                    ...newExperience,
+                    expTitle: e.target.value,
+                  })
+                }
+                required
+              />
+            </div>
+            <div className="mb-3">
+              <label>Start Date:</label>
+              <select
+                className="form-select"
+                value={newExperience.expStartDate.month}
+                onChange={(e) =>
+                  setNewExperience({
+                    ...newExperience,
+                    expStartDate: {
+                      ...newExperience.expStartDate,
+                      month: e.target.value,
+                    },
+                  })
+                }
+                required
+              >
+                <option value="">Select Month</option>
+                <option value="January">Jan</option>
+                <option value="February">Feb</option>
+                <option value="March">Mar</option>
+                <option value="April">Apr</option>
+                <option value="May">May</option>
+                <option value="June">Jun</option>
+                <option value="July">Jul</option>
+                <option value="August">Aug</option>
+                <option value="September">Sep</option>
+                <option value="October">Oct</option>
+                <option value="November">Nov</option>
+                <option value="December">Dec</option>
+              </select>
+              <select
+                className="form-select"
+                value={newExperience.expStartDate.year}
+                onChange={(e) =>
+                  setNewExperience({
+                    ...newExperience,
+                    expStartDate: {
+                      ...newExperience.expStartDate,
+                      year: e.target.value,
+                    },
+                  })
+                }
+                required
+              >
+                <option value="">Select Year</option>
+                {/* Add options for years */}
+                {/* Example: Option elements for years from 2000 to 2030 */}
+                {Array.from({ length: 31 }, (_, i) => 2000 + i).map((year) => (
+                  <option key={year} value={year}>
+                    {year}
+                  </option>
+                ))}
+              </select>
+            </div>
+            <div className="mb-3">
+              <label>End Date:</label>
+              <select
+                className="form-select"
+                value={newExperience.expEndDate.month}
+                onChange={(e) =>
+                  setNewExperience({
+                    ...newExperience,
+                    expEndDate: {
+                      ...newExperience.expEndDate,
+                      month: e.target.value,
+                    },
+                  })
+                }
+                required
+              >
+                <option value="">Select Month</option>
+                <option value="January">Jan</option>
+                <option value="February">Feb</option>
+                <option value="March">Mar</option>
+                <option value="April">Apr</option>
+                <option value="May">May</option>
+                <option value="June">Jun</option>
+                <option value="July">Jul</option>
+                <option value="August">Aug</option>
+                <option value="September">Sep</option>
+                <option value="October">Oct</option>
+                <option value="November">Nov</option>
+                <option value="December">Dec</option>
+              </select>
+              <select
+                className="form-select"
+                value={newExperience.expEndDate.year}
+                onChange={(e) =>
+                  setNewExperience({
+                    ...newExperience,
+                    expEndDate: {
+                      ...newExperience.expEndDate,
+                      year: e.target.value,
+                    },
+                  })
+                }
+                required
+              >
+                <option value="">Select Year</option>
+                {/* Add options for years */}
+                {/* Example: Option elements for years from 2000 to 2030 */}
+                {Array.from({ length: 31 }, (_, i) => 2000 + i).map((year) => (
+                  <option key={year} value={year}>
+                    {year}
+                  </option>
+                ))}
+              </select>
+            </div>
+            <div className="mb-3">
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Experience Organization"
+                value={newExperience.expOrganization}
+                onChange={(e) =>
+                  setNewExperience({
+                    ...newExperience,
+                    expOrganization: e.target.value,
+                  })
+                }
+                required
+              />
+            </div>
+            <div className="mb-3">
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Experience Location"
+                value={newExperience.expLocation}
+                onChange={(e) =>
+                  setNewExperience({
+                    ...newExperience,
+                    expLocation: e.target.value,
+                  })
+                }
+                required
+              />
+            </div>
+            <div className="mb-3">
+              <input
+                type="file" // Use input type file for image upload
+                accept="image/*" // Allow only image files
+                onChange={handleImageUpload}
+              />
+            </div>
+            <div className="d-flex">
+              <button type="submit" className="btn btn-primary">
+                Save
+              </button>
+              <button
+                className="close-button p-1 rounded-3 ms-5"
+                onClick={closeExperienceForm}
+              >
+                Close
+              </button>
+            </div>
+          </form>
         </div>
       )}
 
@@ -282,7 +674,13 @@ const ProfilePage = () => {
                       <b>{ele.expTitle}</b>
                       <br />
                       <small style={{ color: "#666666" }}>
-                        {ele.expDate} ({ele.expTotal})
+                        {ele.expStartDate.month} {ele.expStartDate.year} -{" "}
+                        {ele.expEndDate.month} {ele.expEndDate.year} (
+                        {calculateExperienceTotal(
+                          ele.expStartDate,
+                          ele.expEndDate
+                        )}
+                        )
                       </small>
                       <br />
                       <small style={{ color: "#666666" }}>
