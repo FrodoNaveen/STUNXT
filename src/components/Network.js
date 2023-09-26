@@ -11,6 +11,7 @@ import ContactList from "./ContactList";
 const Network = () => {
   const index = 3;
 
+
   const networkHeader = ["Friends", "Requests", "Suggested", "Contacts"];
 
   const [selectNetworkHeader, setSelectNetworkHeader] = useState("");
@@ -22,6 +23,7 @@ const Network = () => {
   useEffect(() => {
     setSelectNetworkHeader("Friends");
   }, []);
+
 
   return (
     <div className="mainContainer bg-body-secondary card  phoneSize">
@@ -89,10 +91,11 @@ const Network = () => {
         <div className="b_100">
           {selectNetworkHeader === "Friends" ? (
             <div>
-              {friendList.map((ele) => (
+              {friendList.map((ele, index) => (
                 <div
                   className="container card bg-white borderWhite mt-3 rounded-4"
                   style={{ height: "90px" }}
+                  key={index}
                 >
                   <div className="pt-3 pb-3">
                     <div className="row">
@@ -110,7 +113,7 @@ const Network = () => {
                         <small>{ele.userCollege}</small>
                       </div>
                       <div className="col-5 mt-2 text-end">
-                        <button className="wishNowBtn">
+                        <button className="wishNowBtn" >
                           <small>Message</small>
                         </button>
                       </div>

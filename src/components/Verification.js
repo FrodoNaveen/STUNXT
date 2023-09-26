@@ -33,7 +33,14 @@ const Verification = () => {
   }
 
   function getOtp() {
-    setCheckPhoneNumber(true);
+
+    if (phoneNumber.length === 0) {
+      alert("Please enter your phone number")
+    } else if (phoneNumber && phoneNumber.length < 10) {
+      alert(`You have entered only ${phoneNumber.length} digits of your phone number`)
+    } else {
+      setCheckPhoneNumber(true)
+    }
   }
 
   function editNumber() {
@@ -43,6 +50,7 @@ const Verification = () => {
 
   function goToOtpPage() {
     navigate("/otp", { state: { phoneNumber } });
+
   }
 
   function dialPadToInput(num) {
@@ -200,7 +208,7 @@ const Verification = () => {
               </div>
             ) : (
               <div className="float-end">
-                <span className="text-secondary">
+                <span className="text-secondary" onClick={getOtp}>
                   <i className="fa-solid fa-circle-arrow-right fa-2xl"></i>
                 </span>
               </div>
