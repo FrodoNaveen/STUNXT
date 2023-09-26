@@ -18,7 +18,7 @@ const Events = () => {
     "Dance",
     "Science",
     "Singing",
-    "Exhibition time",
+    "Exhibition",
   ];
   const [selectEventHeader, setSelectEventHeader] = useState("");
   const [categories, setCategories] = useState(AllData);

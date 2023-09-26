@@ -22,8 +22,10 @@ import Career from "./components/Career";
 import EventDetailsPage from "./components/EventDetailsPage";
 import ProfilePage from "./components/ProfilePage";
 import ChatBox from "./components/ChatBox";
-
-
+import GoalsPage from "./components/GoalsPage";
+import Level1 from "./components/Levels/Level1";
+import Level2 from "./components/Levels/Level2";
+import Level3 from "./components/Levels/Level3";
 
 function App() {
   return (
@@ -59,6 +61,11 @@ function App() {
         <Route path="/eventdetailspage" element={<EventDetailsPage />}></Route>
         <Route path="/profilepage" element={<ProfilePage />}></Route>
         <Route path="/chatbox" element={<ChatBox />}></Route>
+        <Route path="/goalspage" element={<GoalsPage />}></Route>
+        <Route path="/level1" element={<Level1 />}></Route>
+        <Route path="/level2" element={<Level2 />}></Route>
+        <Route path="/level3" element={<Level3 />}></Route>
+
       </Routes>
     </div>
   );
