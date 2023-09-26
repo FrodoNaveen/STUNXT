@@ -17,21 +17,23 @@ const GoalsPage = () => {
     let goalCategories = ["Ongoing", "Completed", "Rewards & Batch"]
 
     const [categoryName, setCategoryName] = useState("")
-    const [level1Progress, setLevel1Progress] = useState()
+    const [level1Progress, setLevel1Progress] = useState(45)
     const [level2Progress, setLevel2Progress] = useState(25)
     const [level3Progress, setLevel3Progress] = useState(10)
 
-    const { goal1CompletedPercentage } = location.state || {}
+    // const { goal1CompletedPercentage } = location.state || {}
+
 
 
 
     useEffect(() => {
         setCategoryName("Ongoing")
+
     }, [])
 
-    useEffect(() => {
-        setLevel1Progress(goal1CompletedPercentage)
-    }, [goal1CompletedPercentage])
+    // useEffect(() => {
+    //     setLevel1Progress(goal1CompletedPercentage)
+    // }, [goal1CompletedPercentage])
 
     function changeToClickedCategory(category) {
         setCategoryName(category)

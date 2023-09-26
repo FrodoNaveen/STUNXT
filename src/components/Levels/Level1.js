@@ -25,6 +25,7 @@ const Level1 = () => {
         }
     }, [])
 
+
     let goal1CompletedPercentage = (Math.round((goal1Percentage + goal2Percentage + goal3Percentage) / 3))
 
     function goBack() {
