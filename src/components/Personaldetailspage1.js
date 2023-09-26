@@ -170,7 +170,7 @@ const Personaldetailspage1 = () => {
                             </div>
                         </form>
                     </div>
-                    <div className="container mt-5">
+                    <div className="container mt-2">
                         <span className="cursorPointer text-secondary float-end mt-5" onClick={goToNextFormPage}><i className="fa-solid fa-circle-arrow-right fa-2xl" style={{ color: isFormFilled ? "#00d970" : null }}></i></span>
                     </div>
                 </div>}

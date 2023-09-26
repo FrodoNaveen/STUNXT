@@ -116,10 +116,10 @@ const Personaldetailspage2 = ({ formData1 }) => {
             </div>
 
             <div className="container formPageFooter">
-                <div className="float-start mt-5">
+                <div className="float-start mt-2">
                     <b className="cursorPointer mt-5" style={{ color: "#00d970" }}>Skip</b>
                 </div>
-                <div className="float-end mt-5">
+                <div className="float-end mt-2">
                     <span className="cursorPointer text-secondary mt-5" onClick={goToLoginAsPage}><i className="fa-solid fa-circle-arrow-right fa-2xl" style={{ color: isFormFilled ? "#00d970" : null }}></i></span>
                 </div>
             </div>

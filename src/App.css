@@ -29,7 +29,7 @@ body {
 }
 
 .welcomeBody {
-  height: 800px;
+  height: 100vh;
 }
 
 .navicons {
@@ -78,7 +78,7 @@ body {
 }
 
 .verificationFooter {
-  margin-top: 250px;
+  margin-top: 210px;
 }
 
 
@@ -91,7 +91,7 @@ body {
 }
 
 .otpVerificationFooter {
-  margin-top: 255px;
+  margin-top: 215px;
 }
 
 .cursorPointer {

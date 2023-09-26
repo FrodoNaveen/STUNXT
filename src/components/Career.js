@@ -114,7 +114,7 @@ const Career = () => {
       {/* Career categories */}
       {SelectCareerHeader === "Jobs" && (
         <div className="conatiner-fluid mt-4 me-2">
-          <div className="d-flex scrollHide no-wrap" style={{ overflow: "auto" }}>
+          <div className="d-flex justify-content-center scrollHide no-wrap" style={{ overflow: "auto" }}>
             {careerCategories.map((ele, index) => (
               <div key={index}>
                 {categoryName === ele ? (
@@ -145,7 +145,7 @@ const Career = () => {
       {/* all careers job */}
 
       {SelectCareerHeader === "Jobs" && (
-        <div className="container">
+        <div className="container scroll scrollHide">
           <div className="b_100">
             {categories.map((ele, index) => (
               <div
