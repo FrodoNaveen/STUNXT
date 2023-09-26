@@ -12,7 +12,7 @@ const Level1 = () => {
 
     const [goal1Percentage, setGoal1Percentage] = useState(65)
     const [goal2Percentage, setGoal2Percentage] = useState(50)
-    const [goal3Percentage, setGoal3Percentage] = useState(10)
+    const [goal3Percentage, setGoal3Percentage] = useState(15)
 
 
     useEffect(() => {
@@ -25,7 +25,7 @@ const Level1 = () => {
         }
     }, [])
 
-    let goal1CompletedPercentage = (goal1Percentage + goal2Percentage + goal3Percentage) / 3
+    let goal1CompletedPercentage = (Math.round((goal1Percentage + goal2Percentage + goal3Percentage) / 3))
 
     function goBack() {
         navigate("/goalspage", { state: { goal1CompletedPercentage } })

@@ -48,18 +48,20 @@ const ChatBoxNavbar = (props) => {
 
     return (
         <div className="container-fluid">
-            <ul className="nav bg-white justify-content-between navBar pt-1" >
-                {navBarFooter.map((ele, index) => (
-                    <li className="nav-item text-center" key={index} onClick={() => goToClickedPage(ele.name)} >
-                        {ele.name === page ?
-                            <span className="nav-link cursorPointer" style={{ color: "#00d970" }}>{ele.image}</span>
-                            :
-                            <span className="nav-link text-black cursorPointer">{ele.image}</span>
-                        }
-                        <span>{ele.name}</span>
-                    </li>
-                ))}
-            </ul>
+            <div>
+                <ul className="nav bg-white justify-content-between navBar pt-1" >
+                    {navBarFooter.map((ele, index) => (
+                        <li className="nav-item text-center" key={index} onClick={() => goToClickedPage(ele.name)} >
+                            {ele.name === page ?
+                                <span className="nav-link cursorPointer" style={{ color: "#00d970" }}>{ele.image}</span>
+                                :
+                                <span className="nav-link text-black cursorPointer">{ele.image}</span>
+                            }
+                            <span>{ele.name}</span>
+                        </li>
+                    ))}
+                </ul>
+            </div>
         </div>
 
     )

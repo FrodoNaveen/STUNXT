@@ -27,8 +27,11 @@ const GoalsPage = () => {
 
     useEffect(() => {
         setCategoryName("Ongoing")
-        setLevel1Progress(goal1CompletedPercentage)
     }, [])
+
+    useEffect(() => {
+        setLevel1Progress(goal1CompletedPercentage)
+    }, [goal1CompletedPercentage])
 
     function changeToClickedCategory(category) {
         setCategoryName(category)
@@ -43,12 +46,14 @@ const GoalsPage = () => {
     }
 
     function goToLevel2Page() {
-
+        // if level1 completed it will go to second
         level1Progress === 100 ?
             navigate("/level2") : navigate("/goalspage")
     }
 
     function goToLevel3Page() {
+
+        // if level1 and level2 completed it will go to third
         level1Progress === 100 && level2Progress === 100 ?
             navigate("/level3") : navigate("/goalspage")
     }

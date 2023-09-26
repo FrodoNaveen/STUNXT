@@ -2,8 +2,8 @@ import Time from "./Time"
 import refreshlogo from "../images/Home/refreshlogo.svg";
 import { useNavigate } from "react-router-dom";
 import ChatBoxNavbar from "./ChatBoxNavbar";
-// import { RxAvatar } from "react-icons/rx"
 import profileimage from "../images/Network/friendimage.svg"
+import addIcon from "../images/Feeds/addIcon.svg"
 
 
 
@@ -103,9 +103,18 @@ const ChatBox = () => {
                     </div>
                 ))}
             </div>
-            {/* <div style={{ marginTop: "12%", left: "80%", position: "absolute", width: "100%" }}>
-                <IoMdAddCircle size="50px" color="#00d970" />
-            </div> */}
+            {/* Sticky plus button */}
+            <img
+                className="sticky-plus-button"
+                src={addIcon}
+                alt="addIcon"
+                style={{
+                    position: "fixed",
+                    bottom: "100px", // Adjust vertical position as needed
+                    right: "20px", // Adjust horizontal position as needed
+                    zIndex: 1000, // Ensure it's above other content
+                }}
+            />
             <ChatBoxNavbar index={index} />
         </div >
     )
