@@ -207,7 +207,10 @@ const Verification = () => {
             )}
           </div>
         </div>
-        <div className="container dialpad mt-3 mb-3 ms-2">
+
+
+        {/* dialpad display */}
+        <div className="container dialpad p-3 mb-3 ms-2">
           {dialPad.map((ele, index) => (
             <button
               key={index}
