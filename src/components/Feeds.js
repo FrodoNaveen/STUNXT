@@ -37,7 +37,7 @@ const FeedPost = ({ post }) => {
   const captionParts = post.caption.split("#COVID19");
 
   return (
-    <div className="feed-post bg-white  " style={{ padding: "10px", margin: "5px" }}>
+    <div className="feed-post bg-white" style={{ padding: "10px", margin: "5px" }}>
       <div className="feed-post ">
         <div className="d-flex" style={{ alignItems: "center" }}>
           <img
@@ -135,7 +135,7 @@ const Feeds = () => {
 
   const index = 1
   return (
-    <div className="mainContainer bg-body-secondary card mt-5 phoneSize">
+    <div className="mainContainer bg-body-secondary card  phoneSize">
       <div className="fixed-elements">
         <Time />
       </div>

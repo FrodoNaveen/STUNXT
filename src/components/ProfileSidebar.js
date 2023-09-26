@@ -13,9 +13,13 @@ const ProfileSidebar = () => {
     navigate("/profilepage")
   }
 
+  function goToGoalsPage() {
+    navigate("/goalspage")
+  }
+
 
   return (
-    <div className="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel" style={{ width: "100%", height: "100vh" }}>
+    <div className="offcanvas offcanvas-start" tabIndex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel" style={{ width: "100%", height: "100vh" }}>
       <div className="pt-2 pb-2">
         <Time />
       </div>
@@ -38,7 +42,7 @@ const ProfileSidebar = () => {
           <div className="container mb-2" style={{ bottom: "0", position: "fixed", width: "90%" }} >
 
             {/* Achieve your goals */}
-            <div className="card borderWhite">
+            <div className="card borderWhite" onClick={goToGoalsPage}>
               <div className="row pt-4 pb-4">
                 <div className="col-3">
                   <img src={dartIMG} alt="dartimage" />
@@ -82,7 +86,7 @@ const ProfileSidebar = () => {
 
         </div>
         <div style={{ width: "10%", backgroundColor: "grey" }}>
-          <button type="button" class="btn-close mt-2 ms-2" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          <button type="button" className="btn-close mt-2 ms-2" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
       </div>
     </div>
