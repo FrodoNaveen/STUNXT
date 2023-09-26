@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import Time from "./Time"
-import { useNavigate } from "react-router-dom"
+import { useNavigate, useLocation } from "react-router-dom"
 import { MdVerified } from "react-icons/md"
 import starlogo from "../images/Goals/star.svg"
 import "./GoalsPage.css"
@@ -13,16 +13,21 @@ import ProgressBar from "@ramonak/react-progress-bar";
 const GoalsPage = () => {
 
     let navigate = useNavigate()
+    let location = useLocation()
     let goalCategories = ["Ongoing", "Completed", "Rewards & Batch"]
 
     const [categoryName, setCategoryName] = useState("")
-    const [level1Progress, setLevel1Progress] = useState(65)
+    const [level1Progress, setLevel1Progress] = useState()
     const [level2Progress, setLevel2Progress] = useState(25)
     const [level3Progress, setLevel3Progress] = useState(10)
+
+    const { goal1CompletedPercentage } = location.state || {}
+
 
 
     useEffect(() => {
         setCategoryName("Ongoing")
+        setLevel1Progress(goal1CompletedPercentage)
     }, [])
 
     function changeToClickedCategory(category) {

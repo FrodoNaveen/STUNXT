@@ -2,8 +2,9 @@ import Time from "../Time"
 import { useNavigate } from "react-router-dom"
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import completedTick from "../../images/Goals/success.svg"
+import friendList from "../../data/networkdata/friends";
 
 const Level1 = () => {
 
@@ -14,8 +15,20 @@ const Level1 = () => {
     const [goal3Percentage, setGoal3Percentage] = useState(10)
 
 
+    useEffect(() => {
+        if (friendList.length > 20) {
+            let i = 20
+            setGoal2Percentage(i * 5)
+        } else {
+            let i = friendList.length
+            setGoal2Percentage(i * 5)
+        }
+    }, [])
+
+    let goal1CompletedPercentage = (goal1Percentage + goal2Percentage + goal3Percentage) / 3
+
     function goBack() {
-        navigate("/goalspage")
+        navigate("/goalspage", { state: { goal1CompletedPercentage } })
     }
     return (
         <div className="mainContainer bg-body-tertiary card phoneSize">
