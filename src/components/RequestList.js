@@ -4,8 +4,8 @@ const RequestList = () => {
     return (
         <div>
             {
-                requestlist.map((ele) => (
-                    <div className="container card bg-white borderWhite mt-3 rounded-4" style={{ height: "90px" }}>
+                requestlist.map((ele, index) => (
+                    <div className="container card bg-white borderWhite mt-3 rounded-4" style={{ height: "90px" }} key={index}>
                         <div className="pt-3 pb-3">
                             <div className="row">
                                 <div className="col-2">

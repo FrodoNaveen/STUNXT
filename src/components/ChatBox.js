@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import ChatBoxNavbar from "./ChatBoxNavbar";
 import profileimage from "../images/Network/friendimage.svg"
 import addIcon from "../images/Feeds/addIcon.svg"
+import { useState } from "react";
 
 
 
@@ -16,6 +17,7 @@ const ChatBox = () => {
     function goBack() {
         navigate("/home")
     }
+
 
     let chat = [{
         userImage: profileimage, userName: "Frodo Naveen", userMessage: [{ message: "Hello Comedy", messageDate: "22 sep" }, { message: "Dei pombala Kamesh", messageDate: "15 Jun" },
@@ -30,6 +32,8 @@ const ChatBox = () => {
         { message: "Suiiiiiiii", messageDate: "15 Jun" }]
     }
     ]
+
+    const [chats, setChats] = useState(chat)
 
     return (
         <div className="mainContainer bg-body-secondary card phoneSize">
@@ -80,7 +84,7 @@ const ChatBox = () => {
             {/* Messages in the chatbox */}
 
             <div className="container mt-3">
-                {chat.map((ele, index) => (
+                {chats.map((ele, index) => (
                     <div className="card borderWhite rounded-2 mt-2 cursorPointer" key={index}>
                         <div className="row p-3">
                             <div className="col-2">
@@ -93,10 +97,10 @@ const ChatBox = () => {
 
                                     {/* if message opened thn text muted else dark */}
 
-                                    <small>{ele.userMessage[ele.userMessage.length - 1].message}</small>
+                                    <small>{ele.userMessage ? ele.userMessage[ele.userMessage.length - 1].message : null}</small>
                                 </div>
                                 <div className="float-end">
-                                    <small className="text-muted">{ele.userMessage[ele.userMessage.length - 1].messageDate}</small>
+                                    <small className="text-muted">{ele.userMessage ? ele.userMessage[ele.userMessage.length - 1].messageDate : null}</small>
                                 </div>
                             </div>
                         </div>
