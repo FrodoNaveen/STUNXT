@@ -6,6 +6,8 @@ import feedData from "../data/feedData";
 import Dot_symbol from "../images/Feeds/more_vert.svg";
 import { FaHeart } from "react-icons/fa";
 import { BsShare } from "react-icons/bs";
+import addIcon from "../images/Feeds/addIcon.svg"
+
 import "./Feeds.css";
 
 const FeedPost = ({ post }) => {
@@ -147,6 +149,21 @@ const Feeds = () => {
           ))}
         </div>
       </div>
+           {/* Sticky plus button */}
+           <img
+        className="sticky-plus-button"
+        src= {addIcon}
+        alt="addIcon"
+        style={{
+          position: "fixed",
+          bottom: "100px", // Adjust vertical position as needed
+          right: "20px", // Adjust horizontal position as needed
+          zIndex: 1000, // Ensure it's above other content
+        }}
+      />
+      
+      
+
       <div className="fixed-elements">
 
         <Navbar index={index} />

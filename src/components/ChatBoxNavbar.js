@@ -50,8 +50,6 @@ const ChatBoxNavbar = (props) => {
         <div className="container-fluid">
             <div>
                 <ul className="nav bg-white justify-content-between navBar pt-1" >
-
-
                     {navBarFooter.map((ele, index) => (
                         <li className="nav-item text-center" key={index} onClick={() => goToClickedPage(ele.name)} >
                             {ele.name === page ?

@@ -23,8 +23,14 @@ const ProfileData = {
       expImage: "./CareerData images/amazon_img.svg",
       expType: "Internship",
       expTitle: "Design engineer",
-      expDate: "Dec 2021 - Present",
-      expTotal: "1 yr 7 mos",
+      expStartDate: {
+        month: "Dec",
+        year: "2021",
+      },
+      expEndDate: {
+        month: "Sep",
+        year: "2023",
+      },
       expOrganization: "Amazon",
       expLocation: "Bangalore",
     },
@@ -33,8 +39,14 @@ const ProfileData = {
       expImage: "./CareerData images/Google_img.svg",
       expType: "Internship",
       expTitle: "Design engineer",
-      expDate: "Jan 2020 - Dec 2021",
-      expTotal: "1 yr",
+      expStartDate: {
+        month: "Jan",
+        year: "2020",
+      },
+      expEndDate: {
+        month: "Dec",
+        year: "2021",
+      },
       expOrganization: "Google",
       expLocation: "Bangalore",
     },
