@@ -139,7 +139,7 @@ const CollegeStaff = () => {
         <div className="float-end ">
           <span
             className="cursorPointer me-3"
-            style={{ color: isFormFilled ? "#00d970" : "#636363" }}
+            style={{ color: isFormFilled ? "#00d970" : "#00D97080" }}
             onClick={goToStaffPage2}
           >
             <i className="fa-solid fa-circle-arrow-right fa-2xl"></i>

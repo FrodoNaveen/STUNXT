@@ -10,6 +10,8 @@ const CollegeStaff2 = () => {
   const [department, setDepartment] = useState("");
   const [isUndergoingEducation, setIsUndergoingEducation] = useState(false); // Track user's choice
 
+  const isFormFilled = graduation && collegeName && department
+
   function goToStaffPage() {
     navigate("/staff");
   }
@@ -141,8 +143,8 @@ const CollegeStaff2 = () => {
           </form>
         </div>
       </div>
-      <div className="container" style={{ marginTop: "850px", position: "absolute", marginLeft: "-12px" }}>
-        <span className="btn w-100 rounded-5  continueBtn" onClick={goToHomePage} ><b>Continue</b></span>
+      <div className="container" style={{ marginTop: "780px", position: "absolute", marginLeft: "-12px" }}>
+        <span className="btn w-100 rounded-5" style={{ backgroundColor: isUndergoingEducation ? isFormFilled ? "#00D970" : "#00D97080" : "#00D970", color: "white" }} onClick={goToHomePage} ><b>Continue</b></span>
       </div>
     </div>
   );

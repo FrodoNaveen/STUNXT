@@ -144,7 +144,9 @@ const Verification = () => {
                       : phoneNumber && phoneNumber.length === 10
                         ? "#00d970"
                         : null,
+
                   }}
+                  readOnly
                 // Use readOnly instead of placeholder for static text
                 />
               </span>

@@ -9,6 +9,10 @@ const Welcome = () => {
     navigate("/welcome2");
   }
 
+  function skipWelcomePage() {
+    navigate("/verification")
+  }
+
   return (
     <div className="mainContainer card phoneSize">
       <Time />
@@ -46,7 +50,7 @@ const Welcome = () => {
         </div>
         <div className="mt-5">
           <div className="float-start mb-5">
-            <button className="btn" style={{ color: "#00d970" }}>
+            <button className="btn" style={{ color: "#00d970" }} onClick={skipWelcomePage}>
               <b>Skip</b>
             </button>
           </div>
