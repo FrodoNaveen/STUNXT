@@ -108,7 +108,7 @@ const EventDetailsPage = () => {
                                     <div ref={mapRef}>
                                         <iframe className="gmap_iframe rounded-2 "
                                             title="eventlocation"
-                                            frameborder="0"
+                                            frameBorder="0"
                                             scrolling="no"
                                             marginheight="0"
                                             marginwidth="0"
