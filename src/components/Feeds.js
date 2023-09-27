@@ -6,9 +6,9 @@ import feedData from "../data/feedData";
 import Dot_symbol from "../images/Feeds/more_vert.svg";
 import { FaHeart } from "react-icons/fa";
 import { BsShare } from "react-icons/bs";
-import addIcon from "../images/Feeds/addIcon.svg"
-
+import addIcon from "../images/Feeds/addIcon.svg";
 import "./Feeds.css";
+import FeedPostForm from "./FeedPostform";
 
 const FeedPost = ({ post }) => {
   const [liked, setLiked] = useState(false);
@@ -136,6 +136,18 @@ const FeedPost = ({ post }) => {
 const Feeds = () => {
 
   const index = 1
+
+  const [showCreatePostForm, setShowCreatePostForm] = useState(false);
+  const [feedPosts, setFeedPosts] = useState(feedData);
+
+  const handleAddPost = (newPost) => {
+    // Add the new post to the feedPosts state
+    setFeedPosts([newPost, ...feedPosts]);
+    // Close the CreatePostForm
+    setShowCreatePostForm(false);
+  };
+
+
   return (
     <div className="mainContainer bg-body-secondary card  phoneSize">
       <div className="fixed-elements">
@@ -144,7 +156,7 @@ const Feeds = () => {
       <MenuBar />
       <div className="scrollable-content">
         <div className="feed-posts">
-          {feedData.map((post) => (
+          {feedPosts.map((post) => (
             <FeedPost key={post.id} post={post} />
           ))}
         </div>
@@ -154,6 +166,8 @@ const Feeds = () => {
         className="sticky-plus-button"
         src= {addIcon}
         alt="addIcon"
+        onClick={() => setShowCreatePostForm(true)}
+        
         style={{
           position: "fixed",
           bottom: "100px", // Adjust vertical position as needed
@@ -161,8 +175,16 @@ const Feeds = () => {
           zIndex: 1000, // Ensure it's above other content
         }}
       />
-      
-      
+
+       {/* Conditionally render the CreatePostForm */}
+       {showCreatePostForm && (
+        <FeedPostForm
+        username="Saurabh Kumar" // Set the default username
+        usertype="Student" // Set the default user type
+        userAvatar="./feedData images/avatar.svg" // Set the default user avatar
+        onAddPost={handleAddPost} 
+      />
+      )}
 
       <div className="fixed-elements">
 
