@@ -132,7 +132,7 @@ const CollegeStudent = () => {
         </div>
 
         <div className="container" style={{ marginTop: "200px" }}>
-          <span className="btn w-100 rounded-5" style={{ backgroundColor: isFormFilled ? "#00d970" : "#636363", color: "white" }} onClick={goToHomePage}><b>Continue</b></span>
+          <span className="btn w-100 rounded-5" style={{ backgroundColor: isFormFilled ? "#00d970" : "#00D97080", color: "white" }} onClick={goToHomePage}><b>Continue</b></span>
         </div>
       </div>
     </div>
