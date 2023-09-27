@@ -5,7 +5,7 @@ import { MdVerified } from "react-icons/md"
 import starlogo from "../images/Goals/star.svg"
 import "./GoalsPage.css"
 import completedTick from "../images/Goals/success.svg"
-
+import completedTickBig from "../images/Goals/successbig.svg"
 
 // progress bar react
 import ProgressBar from "@ramonak/react-progress-bar";
@@ -24,6 +24,8 @@ const GoalsPage = () => {
     const { goal1CompletedPercentage } = location.state || {}
 
 
+    const [offcanvasBottom, setOffcanvasBottom] = useState(false)
+
 
     useEffect(() => {
         setCategoryName("Ongoing")
@@ -32,6 +34,16 @@ const GoalsPage = () => {
     useEffect(() => {
         setLevel1Progress(goal1CompletedPercentage)
     }, [goal1CompletedPercentage])
+
+    useEffect(() => {
+        if (level1Progress === 100) {
+            setOffcanvasBottom(true)
+        } else if (level2Progress === 100) {
+            setOffcanvasBottom(true)
+        } else if (level3Progress === 100) {
+            setOffcanvasBottom(true)
+        }
+    }, [level1Progress, level2Progress, level3Progress])
 
     function changeToClickedCategory(category) {
         setCategoryName(category)
@@ -132,7 +144,7 @@ const GoalsPage = () => {
                     </div>
 
                     {/* levels  */}
-                    <div className="container mt-4">
+                    <div className="container mt-3">
 
                         {/* Level 1 */}
                         <div className="card borderWhite p-2" onClick={goToLevel1Page}>
@@ -338,6 +350,42 @@ const GoalsPage = () => {
                                 :
                                 null
                     : null}
+
+            {/* offcanvas Bottom Popup if the Level is completed*/}
+
+            <div className={`offcanvas rounded-top-5  offcanvas-bottom ${offcanvasBottom ? "show" : null}`} tabIndex="-1" id="offcanvasLevelBottom" aria-labelledby="offcanvasBottomLabel">
+
+                <div>
+                    <div>
+                        <div className="float-end">
+                            <button type="button" className="btn-close mt-3 me-2 " data-bs-dismiss="offcanvas" aria-label="Close" onClick={() => setOffcanvasBottom(false)}></button>
+                        </div>
+                    </div>
+                    <div className="container" style={{ width: "100%", height: "100vh" }}>
+                        <div className="container text-center mt-5">
+                            <div className="row">
+                                <div className="col-12">
+                                    <img className="img-fluid" src={completedTickBig} alt="successLogo" style={{ height: "100px" }} />
+                                    <br />
+                                    <br />
+                                    <b className="pt-2">Level Completed !!!</b>
+                                    <br />
+                                    <small className="text-muted">Successfully completed Level 1.</small>
+                                    <br />
+                                    <br />
+                                    <span className="btn w-100 text-white rounded-5" style={{ backgroundColor: "#00d970" }}>
+                                        <b>View all Levels</b>
+                                    </span>
+                                    <br />
+                                    <br />
+                                    <b className="appGreen">Do later</b>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </div>
     )
 }
