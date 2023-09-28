@@ -144,7 +144,7 @@ const GoalsPage = () => {
                     </div>
 
                     {/* levels  */}
-                    <div className="container mt-3">
+                    <div className="container mt-2 scroll scrollHide">
 
                         {/* Level 1 */}
                         <div className="card borderWhite p-2" onClick={goToLevel1Page}>

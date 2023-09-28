@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Time from "./Time";
+import "./CollegeStudent.css"
 
 const CollegeStudent = () => {
   const navigate = useNavigate();
@@ -48,7 +49,7 @@ const CollegeStudent = () => {
             </p>
           </div>
         </div>
-        <div className="container studentDetails">
+        <div className="container studentDetails mt-3">
           <form>
             <div className="row">
               <div className="col-12">
@@ -131,7 +132,7 @@ const CollegeStudent = () => {
           </form>
         </div>
 
-        <div className="container" style={{ marginTop: "200px" }}>
+        <div className="container collegeStudentPageCtnBtn" >
           <span className="btn w-100 rounded-5" style={{ backgroundColor: isFormFilled ? "#00d970" : "#00D97080", color: "white" }} onClick={goToHomePage}><b>Continue</b></span>
         </div>
       </div>
