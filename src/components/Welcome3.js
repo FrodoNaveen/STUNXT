@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import Time from "./Time";
 import girlchat from "../images/74908-girl-chatting-with-online-friends.png";
+import "./Welcome.css"
 
 const Welcome3 = () => {
   const navigate = useNavigate();
@@ -55,7 +56,7 @@ const Welcome3 = () => {
             ></i>
           </span>
         </div>
-        <div className="mt-5">
+        <div className="mt-5 mb-3">
           <button className="btn w-100 rounded-5 continueBtn" onClick={goToAgreePage}><b>Continue</b></button>
         </div>
       </div>

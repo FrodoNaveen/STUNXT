@@ -119,8 +119,8 @@ const CompanyDetails = () => {
           </form>
         </div>
       </div>
-      <div className="container" style={{ marginTop: "830px", position: "absolute" }}>
-        <span className="btn w-100 rounded-5  continueBtn" onClick={goTo}><b>Continue</b></span>
+      <div className="container collegeStudentPageCtnBtn">
+        <span className="btn w-100 rounded-5" style={{ backgroundColor: isFormFilled ? "#00d970" : "#00D97080", color: "white" }} onClick={goTo}><b>Continue</b></span>
       </div>
     </div>
   );

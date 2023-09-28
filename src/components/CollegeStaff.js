@@ -58,7 +58,7 @@ const CollegeStaff = () => {
             </p>
           </div>
         </div>
-        <div className="container studentDetails">
+        <div className="container studentDetails mt-3">
           <form>
             <div className="row">
               <div className="col-12">

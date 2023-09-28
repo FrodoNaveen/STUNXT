@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import Time from "./Time";
 import girlchat from "../images/74908-girl-chatting-with-online-friends.png";
+import "./Welcome.css"
 
 const Welcomee2 = () => {
   const navigate = useNavigate();
@@ -59,7 +60,7 @@ const Welcomee2 = () => {
           </span>
         </div>
         <div className="mt-5">
-          <div className="float-start mb-5">
+          <div className="float-start">
             <button className="btn" style={{ color: "#00d970" }} onClick={skipWelcomePage}>
               <b>Skip</b>
             </button>

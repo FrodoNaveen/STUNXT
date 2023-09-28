@@ -28,25 +28,25 @@ body {
   margin: auto;
 }
 
-.welcomeBody {
+/* .welcomeBody {
   height: 100vh;
-}
+} */
 
 .navicons {
   margin-left: 5px;
 }
 
-.welcomeImage1 {
+/* .welcomeImage1 {
   margin-top: 100px;
-}
+} */
 
-.welcomeImage {
+/* .welcomeImage {
   margin-top: 28px;
-}
+} */
 
-.agreeWelcomeImage {
+/* .agreeWelcomeImage {
   margin-top: 100px;
-}
+} */
 
 .continueBtn {
   background-color: #00d970;
@@ -77,7 +77,7 @@ body {
   color: #636363;
 }
 
-.verificationFooter {
+/* .verificationFooter {
   margin-top: 160px;
 }
 
@@ -88,17 +88,17 @@ body {
   margin-left: 40px;
   width: 300px;
 
-}
+} */
 
-.otpVerificationFooter {
+/* .otpVerificationFooter {
   margin-top: 165px;
-}
+} */
 
 .cursorPointer {
   cursor: pointer;
 }
 
-.inputNumberSuccess {
+/* .inputNumberSuccess {
   position: absolute;
   text-align: center;
   width: auto;
@@ -107,14 +107,14 @@ body {
   margin-left: 22px;
   margin-top: -10px;
   background-color: white;
-}
+} */
 
 .dialpad {
   display: grid;
   grid-template-columns: auto auto auto;
 }
 
-.formDetails {
+/* .formDetails {
   margin-top: 40px;
 }
 
@@ -139,7 +139,7 @@ body {
 }
 
 /* radio background color change */
-input[type=radio] {
+/* input[type=radio] {
   appearance: none;
   padding: 6px;
   border: 1px solid #d2cfcf;
@@ -168,7 +168,7 @@ input[type=radio]:checked {
 
 .formPageFooter {
   margin-top: 135px;
-}
+}  */
 
 .loginasCard {
   height: 80px;
@@ -281,7 +281,7 @@ input[type=radio]:checked {
   overflow: scroll;
 }
 
-.formdata {
+/* .formdata {
   position: absolute;
   text-align: center;
   width: auto;
@@ -290,7 +290,7 @@ input[type=radio]:checked {
   margin-left: 22px;
   margin-top: -10px;
   background-color: white;
-}
+} */
 
 .no-wrap {
   white-space: nowrap;

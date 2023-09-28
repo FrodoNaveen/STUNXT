@@ -2,6 +2,7 @@ import { useState, useRef } from "react"
 import { useNavigate } from "react-router-dom"
 import Personaldetailspage2 from "./Personaldetailspage2"
 import Time from "./Time"
+import "./PersonalDetails.css"
 
 
 const Personaldetailspage1 = () => {

@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Time from "./Time";
+import "./Verification.css"
 
 const Verification = () => {
   const navigate = useNavigate();
@@ -224,12 +225,9 @@ const Verification = () => {
           {dialPad.map((ele, index) => (
             <button
               key={index}
-              className="btn rounded-5 border-0 mt-3"
+              className="btn rounded-5 border-0 dialPadNumbers"
               style={{
-                backgroundColor: checkPhoneNumber ? "#837f7f" : "#F9F9F9",
-                color: "black",
-                width: "106px",
-                height: "50px",
+                backgroundColor: checkPhoneNumber ? "#837f7f" : "#F9F9F9"
               }}
               onClick={() => dialPadToInput(ele)}
             >

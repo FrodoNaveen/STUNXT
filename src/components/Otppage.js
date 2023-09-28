@@ -3,6 +3,7 @@ import OtpInput from "react-otp-input";
 import { useNavigate, useLocation } from "react-router-dom";
 import Time from "./Time";
 import { generateOTP, validateOTP } from "./otpUtils";
+import "./OtpPage.css"
 
 const Otppage = () => {
     const navigate = useNavigate();
@@ -86,21 +87,25 @@ const Otppage = () => {
                 </p>
                 <div className="row">
                     <div className="col-12">
-                        <OtpInput
-                            inputStyle={{
-                                width: "66px",
-                                height: "62px",
-                                marginLeft: "20px",
-                                borderRadius: "10px",
-                                border: "1px solid #636363",
-                                borderColor: otp === generatedOTP ? "#00d970" : "#636363",
-                            }}
-                            value={otp}
-                            onChange={setOtp}
-                            numInputs={4}
-                            renderSeparator={<span> </span>}
-                            renderInput={(props) => <input {...props} />}
-                        />
+                        <div className="d-flex justify-content-center">
+                            <OtpInput
+                                inputStyle={{
+                                    width: "66px",
+                                    height: "62px",
+                                    marginLeft: "10px",
+                                    alignItems: "center",
+                                    borderRadius: "10px",
+                                    border: "1px solid #636363",
+                                    className: "sk",
+                                    borderColor: otp === generatedOTP ? "#00d970" : "#636363",
+                                }}
+                                value={otp}
+                                onChange={setOtp}
+                                numInputs={4}
+                                renderSeparator={<span> </span>}
+                                renderInput={(props) => <input {...props} />}
+                            />
+                        </div>
                     </div>
                 </div>
                 {/* Display the generated OTP below the input field */}
@@ -143,16 +148,14 @@ const Otppage = () => {
             </div>
 
             {/* Dialpad display */}
-            <div className="container dialpad p-3 mb-3 ms-2">
+            <div className="container dialpad mt-2 mb-5 ms-2">
                 {dialPad.map((ele, index) => (
                     <button
                         key={index}
-                        className="btn border-0 rounded-5 mt-3"
+                        className="btn border-0 rounded-5  dialPadOtpPage"
                         style={{
                             backgroundColor: "#F9F9F9",
-                            color: "black",
-                            width: "106px",
-                            height: "50px",
+
                         }}
                         onClick={() => dialPadToInput(ele)}
                     >

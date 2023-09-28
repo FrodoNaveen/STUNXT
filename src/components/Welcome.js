@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import Time from "./Time";
 import girlchat from "../images/74908-girl-chatting-with-online-friends.png";
+import "./Welcome.css"
 
 const Welcome = () => {
   const navigate = useNavigate();
