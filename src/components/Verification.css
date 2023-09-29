@@ -37,7 +37,7 @@
 
     .dialPadNumbers {
         width: 80px;
-        height: 30px;
+        height: 40px;
         margin-top: 10px;
         margin-left: 10px;
     }
@@ -47,13 +47,13 @@
     }
 }
 
-@media (max-width:380px) {
+@media (max-width:380px) and (min-height:700px) {
     .verificationFooter {
         margin-top: 90px;
     }
 
     .dialPadNumbers {
-        width: 80px;
+        width: 85px;
         height: 50px;
         margin-top: 10px;
         margin-left: 5px;
