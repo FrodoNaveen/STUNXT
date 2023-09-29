@@ -10,7 +10,7 @@
 }
 
 
-@media (max-width:380px) and (max-height:670px) {
+@media (max-width:380px) and (max-height:700px) {
     .otpVerificationFooter {
         margin-top: 75px;
     }
@@ -24,7 +24,7 @@
     }
 }
 
-@media (max-height:750px)and (min-height:700px) {
+@media (max-width:380px)and (min-height:701px) {
     .otpVerificationFooter {
         margin-top: 105px;
     }
