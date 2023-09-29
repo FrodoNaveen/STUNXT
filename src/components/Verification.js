@@ -71,7 +71,7 @@ const Verification = () => {
 
 
   return (
-    <div className="mainContainer card phoneSize">
+    <div className="mainContainer card phoneSize" style={{ backgroundColor: checkPhoneNumber ? "#b3b3b3" : null }}>
       <Time />
       {phoneNumber && phoneNumber.length === 10 && checkPhoneNumber ? (
         <div className="row">
