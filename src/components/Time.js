@@ -20,32 +20,24 @@ const Time = () => {
     }
   }, []);
 
-  return (
-    // added container fluid new
-    <div className="container-fluid  bg-white px-3 p-2">
-      <span className="float-start">
-        <b>{time}</b>
-      </span>
-      <div className="float-end d-flex justify-content-around">
-        <span>
-          <i className="fa-solid fa-signal" style={{ color: "#000000" }}></i>
-        </span>
-        <span className="navicons">
-          <i className="fa-solid fa-wifi" style={{ color: "#000000" }}></i>
-        </span>
-        <span className="navicons">
+  return
+  // added container fluid new
+  // <div className="container-fluid  bg-white px-3 p-2">
+  //   <span className="float-start">
+  //     <b>{time}</b>
+  //   </span>
+  //   <div className="float-end d-flex justify-content-around">
+  //     <span>
+  //       <i className="fa-solid fa-signal" style={{ color: "#000000" }}></i>
+  //     </span>
+  //     <span className="navicons">
+  //       <i className="fa-solid fa-wifi" style={{ color: "#000000" }}></i>
+  //     </span>
+  //     <span className="navicons">
+  //       <BsBatteryFull size="22px" />
+  //     </span>
+  //   </div>
+  // </div>
 
-          {/* font awesome icon */}
-          {/* <i
-            className="fa-solid fa-battery-full"
-            style={{ color: "#000000" }}
-          ></i> */}
-
-          {/* react icons */}
-          <BsBatteryFull size="22px" />
-        </span>
-      </div>
-    </div>
-  );
 };
 export default Time;
