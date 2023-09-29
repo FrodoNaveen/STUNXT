@@ -39,8 +39,14 @@
 }
 
 @media (min-width:400px) {
-
     .otpVerificationFooter {
         margin-top: 205px;
+    }
+}
+
+@media (min-width:400px) and (min-height:900px) {
+
+    .otpVerificationFooter {
+        margin-top: 235px;
     }
 }
