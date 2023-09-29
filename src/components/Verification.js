@@ -200,7 +200,7 @@ const Verification = () => {
               <p style={{ color: "#00d970" }}>Get Help</p>
             </div>
             {phoneNumber && phoneNumber.length === 10 ? (
-              <div className="float-end">
+              <div className="float-end me-4">
                 <span
                   className="cursorPointer"
                   style={{ color: "#00d970" }}
@@ -210,7 +210,7 @@ const Verification = () => {
                 </span>
               </div>
             ) : (
-              <div className="float-end">
+              <div className="float-end me-4">
                 <span className="text-secondary" onClick={getOtp}>
                   <i className="fa-solid fa-circle-arrow-right fa-2xl"></i>
                 </span>
@@ -221,7 +221,7 @@ const Verification = () => {
 
 
         {/* dialpad display */}
-        <div className="container dialpad p-3 mb-3 ms-2">
+        {/* <div className="container dialpad p-3 mb-3 ms-2">
           {dialPad.map((ele, index) => (
             <button
               key={index}
@@ -234,7 +234,7 @@ const Verification = () => {
               {ele}
             </button>
           ))}
-        </div>
+        </div> */}
       </div>
     </div>
   );

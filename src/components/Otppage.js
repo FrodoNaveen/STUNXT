@@ -148,7 +148,7 @@ const Otppage = () => {
             </div>
 
             {/* Dialpad display */}
-            <div className="container dialpad mt-2 mb-5 ms-2">
+            {/* <div className="container dialpad mt-2 mb-5 ms-2">
                 {dialPad.map((ele, index) => (
                     <button
                         key={index}
@@ -162,7 +162,7 @@ const Otppage = () => {
                         {ele}
                     </button>
                 ))}
-            </div>
+            </div> */}
         </div>
     );
 };

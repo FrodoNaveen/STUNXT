@@ -1,5 +1,7 @@
 .otpVerificationFooter {
-    margin-top: 175px;
+    bottom: 30%;
+    position: fixed;
+
 }
 
 .dialPadOtpPage {

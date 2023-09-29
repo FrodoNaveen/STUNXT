@@ -1,5 +1,7 @@
 .verificationFooter {
-    margin-top: 160px;
+    bottom: 30%;
+    position: fixed;
+    width: 100%;
 }
 
 
@@ -30,7 +32,7 @@
     background-color: white;
 }
 
-@media (max-width:380px) and (max-height:670px) {
+/* @media (max-width:380px) and (max-height:670px) {
     .verificationFooter {
         margin-top: 55px;
     }
@@ -69,4 +71,4 @@
     .verificationFooter {
         margin-top: 185px;
     }
-}
+} */
