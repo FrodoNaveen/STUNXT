@@ -30,7 +30,7 @@
     background-color: white;
 }
 
-@media (max-width:380px) and (max-height:700px) {
+@media (max-width:380px) and (max-height:670px) {
     .verificationFooter {
         margin-top: 55px;
     }
@@ -47,9 +47,9 @@
     }
 }
 
-@media (max-width:380px) and (min-height:701px) {
+@media (max-width:380px) and (min-height:700px) {
     .verificationFooter {
-        margin-top: 50px;
+        margin-top: 90px;
     }
 
     .dialPadNumbers {
@@ -68,11 +68,5 @@
 @media (min-width:400px) {
     .verificationFooter {
         margin-top: 185px;
-    }
-}
-
-@media (min-width:400px) and (min-height:900px) {
-    .verificationFooter {
-        margin-top: 215px;
     }
 }

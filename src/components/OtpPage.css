@@ -10,7 +10,7 @@
 }
 
 
-@media (max-width:380px) and (max-height:700px) {
+@media (max-width:380px) and (max-height:670px) {
     .otpVerificationFooter {
         margin-top: 75px;
     }
@@ -24,9 +24,9 @@
     }
 }
 
-@media (max-width:380px)and (min-height:701px) {
+@media (max-height:750px)and (min-height:700px) {
     .otpVerificationFooter {
-        margin-top: 75px;
+        margin-top: 105px;
     }
 
     .dialPadOtpPage {
@@ -39,14 +39,8 @@
 }
 
 @media (min-width:400px) {
+
     .otpVerificationFooter {
         margin-top: 205px;
-    }
-}
-
-@media (min-width:400px) and (min-height:900px) {
-
-    .otpVerificationFooter {
-        margin-top: 235px;
     }
 }
