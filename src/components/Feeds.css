@@ -1,9 +1,9 @@
-.fixed-elements {
+/* .fixed-elements {
   position: sticky;
   top: 0;
   z-index: 1;
   background-color: white;
-}
+} */
 
 .scrollable-content {
   overflow-y: auto;
